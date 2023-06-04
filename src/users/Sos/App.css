@@ -1,0 +1,98 @@
+*{padding: 0;margin: 0;box-sizing: border-box;}
+.section{
+    background-color: rgba(214, 214, 214, 0.482);
+    display: flex;
+    gap: 50px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.header{
+    width: 100%;
+    padding: 15px;
+    border: 4px solid transparent;
+    box-shadow: 2px 2px 6px 4px rgb(4, 84, 62);
+    text-align: center;
+    text-shadow: 6px 6px 6px rgba(15, 15, 15, 0.833);
+    letter-spacing: 14px;
+    font-size: 50px;
+    border-radius: 0 0 10px 10px;
+    color: white;
+    background-color:rgba(3, 71, 71, 0.772);
+}
+.todos{
+   border: 4px solid transparent;
+   border-radius: 10px;
+   width: 25%;
+   text-align: center;
+   background-color:rgb(222, 220, 220);
+   box-shadow: 2px 4px 12px 5px rgba(4, 103, 77, 0.598);
+   transform: scale(1,1);
+   transition: .3s;
+}
+.todos:hover{
+    transform:scale(1.1,1.1) ;
+}
+.deletTitle{
+    font-size: 15px;
+    display: flex;
+    width: 10%;
+    transform: scale(1,1);
+    text-shadow: 2px 2px 2px black;
+    transition: .3s;
+    padding: 0 5px;
+}
+.deletTitle:hover{
+    transform: scale(1.4,1.8)
+}
+.footer{
+    width: 100%;
+    height: 140px;
+    padding: 10px 0;
+    letter-spacing: 8px;
+    font-size: 40px;
+    text-shadow: 4px 6px 6px black;
+    color: white;
+    background-color: rgba(3, 71, 71, 0.772);
+    box-shadow: 2px 2px 6px 8px rgb(3, 83, 62);
+    border: 4px solid transparent;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+}
+.footer p{
+    font-size: 18px;
+    color:whitesmoke;
+}
+.footer .span{
+    font-size: 22px;
+    color: rgb(7, 7, 130);
+    padding: 10px;
+}
+.title{
+    display: flex;
+    font-size: 29px;
+    font-style: italic;
+    width: 100%;
+    color: red;
+   align-items: center;
+   letter-spacing: 6px;
+   justify-content: center;
+    padding:0 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.721);
+}
+h2{
+    font-size: 22px;
+    color: rgb(69, 66, 66);
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.525);
+}
+.userid{
+    font-size: 20px;
+    color: rgb(69, 66, 66);
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+    padding: 5px 0;
+}
+.completed{
+    font-size: 20px;
+    color: rgb(69, 66, 66);
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.589);
+    padding: 5px 0;
+}
