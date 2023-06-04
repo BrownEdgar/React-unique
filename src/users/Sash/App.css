@@ -1,0 +1,45 @@
+.box{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+    background-color: gray;
+    padding: 15px 0;
+    
+   }
+   .text{
+     width: 23%;
+     background-color: white;
+     padding: 10px;
+     text-align: center;
+     border-radius: 15px;
+     transition: 0.3s;
+   }
+   .text:hover{
+     background-color: rgb(231, 236, 235);
+     box-shadow: 5px 5px 5px 5px  black;
+     transform: translateY(-5px);
+   }
+   .text:hover .del{
+     background-color: rgb(231, 236, 235);
+   }
+   .text span{
+     background-color: yellow;
+     font-style: italic;
+   }
+   .text .del{
+     background-color: white;
+     cursor: pointer;
+     transition: 0.3s;
+   }
+   .text h2 {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+   }
+   .text p {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding-top: 5px;
+   }
