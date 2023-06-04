@@ -1,7 +1,15 @@
-import React from 'react'
+import React from 'react';
+import Users from './components/todos';
+import '../Armen/App.css';
 
-export default function App() {
-	return (
-		<div>App</div>
-	)
+
+
+function App() {
+  return (
+    <div>
+      <Users />
+    </div>
+  );
 }
+
+export default App;
