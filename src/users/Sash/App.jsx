@@ -21,7 +21,7 @@ export default function App() {
 			{
 				data.map(elem => <div key={elem.id} className='text'>
 				<h2> <span>Title:</span>{elem.title} <span className='del' onClick={()=>deleteBox(elem.id)}>&#10060;</span></h2>
-				<p> <span>UserId:</span>{elem.userId}</p>
+				<p className='userid'> <span>UserId:</span><b>{elem.userId}</b></p>
 				<p> <span>Completed:</span>{elem.completed}</p>
 				</div>)
 			}
