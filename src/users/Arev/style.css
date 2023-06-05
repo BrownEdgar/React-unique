@@ -14,7 +14,7 @@ body {
 .box {
 	display: flex;
 	justify-content: space-around;
-	align-items: center;
+
 	flex-wrap: wrap;
 	gap: 12px;
 	padding: 16px;
@@ -29,12 +29,20 @@ body {
 	transition: 0.5s;
 	position: relative;
 }
+
+.box-text.completed {
+	 background-image: linear-gradient(90deg, greenyellow, #1bca00);
+
+}
 .id {
 	position: absolute;
 	font-size: 18px;
-	z-index: 0;
+	z-index: 1;
+	bottom: 5px;
 	right: 10px;
 	font-weight: 700;
 	color: rgba(128, 128, 128, 0.5);
 }
-
+.box-text.completed .id {
+	color: #fff;
+}
