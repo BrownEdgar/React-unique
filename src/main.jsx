@@ -1,4 +1,3 @@
-import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './users/Armen/worckwithImages/App'
 import './index.css'
