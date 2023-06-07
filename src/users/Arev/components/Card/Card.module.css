@@ -10,7 +10,8 @@ body {
 	display: flex;
 	justify-content: center;
 	border: 1px solid transparent;
-	border-radius: 10px;
+
+	overflow: hidden;
 }
 .cardInfo{
 	padding: 28px;
@@ -50,7 +51,10 @@ body {
 	color: rgb(59, 58, 58);
 }
 .cardImage{
+	overflow: hidden;
 	flex-basis: 20%;
+	border-top-left-radius: 16px;
+	border-bottom-left-radius: 16px;
 }
 .cardImage img {
 	width: 100%;

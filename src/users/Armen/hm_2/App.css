@@ -6,8 +6,9 @@ body {
 	height: 100vh;
 	background-color: #f4f4f4;
 }
+
 .card {
-    width: 50%;
+	width: 50%;
 	border-radius: 1em;
 	background-color: #fff;
 	display: flex;
@@ -32,28 +33,30 @@ body {
 
 .card-info h3 {
 	font-family: 'Courier New', Courier, monospace;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    width: 30%;
-    color: gray;
-    font-size: 25px;
-    border-bottom: 1px solid gray;
-}
-.card-info h2 {
-	margin-top: 10px;
-    font-weight: bolder;
-    margin-bottom: 5px;
-    color: black;
-    font-size: 25px;
-    width: 90%;
-}
-.card-info p{
-    color: gray;
-    font-weight: bolder;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	width: 30%;
+	color: gray;
+	font-size: 25px;
+	border-bottom: 1px solid gray;
 }
 
-.autor{
-    border-top: 1px solid gray;
-    margin-top: 10px;
-    width: 90%;
+.card-info h2 {
+	margin-top: 10px;
+	font-weight: bolder;
+	margin-bottom: 5px;
+	color: black;
+	font-size: 25px;
+	width: 90%;
+}
+
+.card-info p {
+	color: gray;
+	font-weight: bolder;
+}
+
+.autor {
+	border-top: 1px solid gray;
+	margin-top: 10px;
+	width: 90%;
 }
