@@ -4,72 +4,68 @@ body {
 	align-items: center;
 	width: 100%;
 	height: 100vh;
-	background-color:aquamarine;
+	background-color: aquamarine;
 }
-.card{
+
+.card {
 	display: flex;
 	justify-content: center;
-    
 }
-.cardInfo{
+
+.cardInfo {
 	padding: 28px;
 	flex-basis: 40%;
 	background-color: white;
-
 }
-.cardInfo a{
+
+.cardInfo a {
 	color: rgba(59, 58, 58, 0.535);
 	font-size: 12px;
-	font-family:Arial, Helvetica, sans-serif;
-    font-weight: 900;
-	text-transform:uppercase;
-	cursor:pointer;
-	
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: 900;
+	text-transform: uppercase;
+	cursor: pointer;
 }
+
 .cardInfo h1 {
-	text-transform:uppercase;
-	padding-top:10px;
-    color: rgba(0, 0, 0, 0.811);
+	text-transform: uppercase;
+	padding-top: 10px;
+	color: rgba(0, 0, 0, 0.811);
 	font-size: 28px;
-    font-weight: 500;
-    line-height: 35px;
-	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-weight: 500;
+	line-height: 35px;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 .cardInfo p {
 	padding-top: 18px;
 	line-height: 30px;
 	font-size: 18px;
-	font-family:sans-serif;
+	font-family: sans-serif;
 	font-weight: bold;
 	color: rgb(59, 58, 58);
 	padding-bottom: 23px;
-	
 }
 
 .button {
-  background-image: linear-gradient(-180deg, #37AEE2 0%, #1E96C8 100%);
-  border-radius: .5rem;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  display: flex;
-  font-size: 16px;
-  justify-content: center;
-  padding: 1rem 1.75rem;
-  text-decoration: none;
-  border: 0;
-  cursor: pointer;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+	background-image: linear-gradient(-180deg, #37AEE2 0%, #1E96C8 100%);
+	border-radius: .5rem;
+	color: #FFFFFF;
+	display: flex;
+	font-size: 16px;
+	justify-content: center;
+	padding: 1rem 1.75rem;
+	border: 0;
+	cursor: pointer;
+	user-select: none;
 }
 
 
-.cardImage{
+.cardImage {
 	flex-basis: 30%;
-
 }
+
 .cardImage img {
 	width: 100%;
 	height: 100%;
-
 }
