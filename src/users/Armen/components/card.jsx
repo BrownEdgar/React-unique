@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Photo from '../../../assets/Arm_images/photo.jpg';
 
 export default function Card() {
-  const [data, setData] = useState({
+  const [ data ] = useState({
     id: 1,
     area: 'TRAVEL',
     title: '10 Best Things to Do in Seattle',
@@ -21,7 +21,6 @@ export default function Card() {
         <h2>{data.title}</h2>
         <p>{data.description}</p>
         <p className='autor' >{data.author}</p>
-      
       </div>
     </div>
   );

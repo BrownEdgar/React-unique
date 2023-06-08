@@ -14,3 +14,13 @@ a {
 	color: inherit;
 }
 
+pre {
+	margin: 50px;
+	padding: 1rem;
+	border-radius: 16px;
+	color: #ee6352;
+	font-weight: 500;
+	background-color: #111;
+	font-size: 20px;
+	white-space: pre-wrap;
+}
