@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 
@@ -6,17 +6,18 @@ export default function TodoList() {
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
+		const fetchTodos = async () => {
+			try {
+				const response = await axios.get('https://jsonplaceholder.typicode.com/todos');
+				setTodos(response.data);
+			} catch (error) {
+				console.error('Error fetching todos:', error);
+			}
+		}
     fetchTodos();
   }, []);
 
-  const fetchTodos = async () => {
-    try {
-      const response = await axios.get('https://jsonplaceholder.typicode.com/todos');
-      setTodos(response.data);
-    } catch (error) {
-      console.error('Error fetching todos:', error);
-    }
-  };
+
 
   return (
     <div>
