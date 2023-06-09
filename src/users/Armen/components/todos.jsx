@@ -3,15 +3,17 @@ import React, { useState, useEffect } from 'react';
 export default function Users() {
   const [data, setData] = useState([]);
 
+	const fetchData = () => {
+		fetch('https://jsonplaceholder.typicode.com/todos')
+			.then(response => response.json())
+			.then(json => setData(json));
+	}
+
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [])
 
-  const fetchData = () => {
-    fetch('https://jsonplaceholder.typicode.com/todos')
-      .then(response => response.json())
-      .then(json => setData(json));
-  };
+
 
   const handleDelete = (id) => {
     const updatedData = data.filter(todo => todo.id !== id);

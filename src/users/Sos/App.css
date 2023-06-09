@@ -37,12 +37,15 @@
     display: flex;
     width: 10%;
     transform: scale(1,1);
-    text-shadow: 2px 2px 2px black;
+  
     transition: .3s;
+		color: blue;
     padding: 0 5px;
+		cursor: pointer;
 }
 .deletTitle:hover{
-    transform: scale(1.4,1.8)
+    transform: scale(1.1,1.1);
+		color: red;
 }
 .footer{
     width: 100%;
