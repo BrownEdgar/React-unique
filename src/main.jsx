@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client'
-import App from "./users/Edgar/PropTypes/App"
+import App from "./users/Edgar/hooks/useReducer/App"
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(<App />)
