@@ -2,16 +2,16 @@ import React, { useState } from 'react'
 import './App.css'
 
 export default function App() {
-  const[data,setusername] = useState([])
+  const[username,setusername] = useState([])
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(data.includes( e.target[0].value)){
+    if(username.includes( e.target[0].value)){
       alert('This item is alredy exist in our list!')
     }else{
-      setusername([...data,e.target[0].value]);
+      setusername([...username,e.target[0].value]);
     }
-    setusername([...data,e.target[0].value]);
+    setusername([...username,e.target[0].value]);
     e.target[0].value = '';
 
   }
