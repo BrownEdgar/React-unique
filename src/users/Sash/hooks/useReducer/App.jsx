@@ -1,23 +1,36 @@
-import { useReducer } from 'react'
+import { useReducer, useEffect } from 'react'
 import reducer, { initialState } from './reducer'
-import {  GET_POSTS, SORTED } from './actionTypes';
+import {  ADD_DEVELOPER, GET_POSTS, SORTED } from './actionTypes';
+import axios from 'axios';
+
 export default function App() {
 	const [state, dispatch] = useReducer(reducer, initialState);
 	
 
-	const getPosts = () => {
-		dispatch({ type: GET_POSTS })
-	}
+useEffect(() => {
+	axios.get('https://jsonplaceholder.typicode.com/posts?_limit=10')
+		.then(res => dispatch({ type: GET_POSTS, payload: res.data }))
+}, [])
+
 	const arrSort =() => {
 		dispatch({type: SORTED})
 	}
-	
+	const handleSubmit = (e) => {  
+		e.preventDefault();
+		dispatch({
+			type: ADD_DEVELOPER,
+			payload: e.target[0].value
+		})
+	}
 	return (
 		<div>
-			<h1>State: {JSON.stringify(state)}</h1>
-			<button onClick={getPosts}>Get Posts</button>
+			<pre>State: {JSON.stringify(state)}</pre>
 			<button onClick={arrSort}>Sort arr</button>
-			<input type="text"/>
+			
+			<form onSubmit={handleSubmit}>
+				<input type="text" />
+				<input type="submit" />
+			</form>
 		</div>
 	)
 }

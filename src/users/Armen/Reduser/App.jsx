@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import axios from 'axios';
 
 import '../Reduser/App.css';
@@ -20,9 +20,10 @@ export default function App() {
       const fetchedPosts = response.data;
       setState(prevState => ({
         ...prevState,
-        posts: fetchedPosts
+        posts: fetchedPosts,
+				actions: prevState.actions + 1
       }));
-      increaseActions();
+   
     } catch (error) {
       console.error('Error fetching posts:', error);
     }
@@ -33,9 +34,9 @@ export default function App() {
     const developerName = event.target.elements.developerName.value;
     setState(prevState => ({
       ...prevState,
-      developers: [...prevState.developers, developerName]
+      developers: [...prevState.developers, developerName],
+			actions: prevState.actions + 1,
     }));
-    increaseActions();
     event.target.reset();
   };
 
@@ -43,9 +44,10 @@ export default function App() {
     const sortedArr = [...arr].sort((a, b) => a - b);
     setState(prevState => ({
       ...prevState,
-      arr: sortedArr
+      arr: sortedArr,
+			actions: prevState.actions + 1
     }));
-    increaseActions();
+
   };
 
   const replacePostIds = () => {
@@ -55,33 +57,24 @@ export default function App() {
     }));
     setState(prevState => ({
       ...prevState,
-      posts: replacedPosts
+      posts: replacedPosts,
+			actions: prevState.actions + 1
     }));
-    increaseActions();
-  };
+  }
 
   const deletePost = (postId) => {
     const updatedPosts = posts.filter(post => post.id !== postId);
     setState(prevState => ({
       ...prevState,
-      posts: updatedPosts
+      posts: updatedPosts,
+			actions: prevState.actions + 1
     }));
-    increaseActions();
-  };
-
-  const increaseActions = () => {
-    setState(prevState => ({
-      ...prevState,
-      actions: prevState.actions + 1
-    }));
-  };
+  }
 
   return (
     <div className="general">
       <h1>Actions: {actions}</h1>
-
       <button onClick={fetchPosts}>Fetch Posts</button>
-
       <form onSubmit={addDeveloper}>
         <input type="text" name="developerName" placeholder="Enter developer name" />
         <button type="submit">Add Developer</button>

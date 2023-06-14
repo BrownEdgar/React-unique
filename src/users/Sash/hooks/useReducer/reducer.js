@@ -1,6 +1,4 @@
-
-import axios from 'axios';
-import { GET_POSTS, SORTED} from './actionTypes';
+import { ADD_DEVELOPER, GET_POSTS, SORTED} from './actionTypes';
 
 
 export const initialState = { 
@@ -14,23 +12,17 @@ export const initialState = {
 export default function reducer(state = initialState, action) {
 
 	switch (action.type) {
-		case GET_POSTS: return fetch(state)
+		case GET_POSTS: return { ...state, posts: action.payload}
 		case SORTED: return sorted(state)
-		
-		
+		case ADD_DEVELOPER: return { ...state, developers: [...state.developers, action.payload], actions: state.actions + 1 }
 
 		default: return state;
 	}
 
 }
-const a = (axios.get("https://jsonplaceholder.typicode.com/posts?_limit=10"))
-const fetch = (state) => {
-	
-	return{ ...state, posts: state.posts.concat(a.data)
-	.then(res => console.log(res.data)), actions: state.actions + 1}
-}
+
 
 const sorted = (state) => { 
-	return { ...state, arr: state.arr.sort((a, b) => a - b) ,actions: state.actions + 1}
+	return { ...state, arr: state.arr.sort((a, b) => a - b) , actions: state.actions + 1}
  }
 
