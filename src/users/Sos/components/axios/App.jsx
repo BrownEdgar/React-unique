@@ -1,5 +1,5 @@
 import {useState,useEffect}from 'react';
-import Axios from "axios";
+import PropTypes from "prop-types";
 import './App.css'
 import instanse from './instance';
 import Child from '../propTypes/Child';
@@ -12,8 +12,6 @@ export default function App() {
         function fetchData() {
           instanse.get('/posts')
           .then(res => setData(res.data))
-          instanse.get('/todos')
-          .then(res => setData(res.data))
         }
         fetchData()
     },[])
@@ -23,6 +21,15 @@ export default function App() {
 		setData(filterPosts)
 		 }
   
+    const handleEditPost = (postId,userId) => {
+        const todo = {
+          id: postId,
+          title: 'lorem ipsum',
+          body: 'lorem lorem'
+        }
+        const curentPost = data.findIndex(elem => elem.id === id)
+    }
+
   return (
     <div className='section'>
         {
@@ -39,6 +46,7 @@ export default function App() {
                             <span className='texttitle'>{elem.title}</span>
                             </h2>
                             <span className='body'> Body - {elem.body}</span>
+                            <button className='editBut' onClick={handleEditPost}>Edit post</button>
                             </p>    
                     </div>
                 )
