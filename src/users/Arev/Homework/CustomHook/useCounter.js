@@ -1,7 +1,7 @@
-import { useState } from "react"
+import { useState } from 'react'
 
 export default function useCounter(initialState = 0) {
-	const [value, setValue] = useState(initialState)
+	const [value, setValue] = useState(initialState);
 	const increment = () => {
 		if (value < 15) {
 			setValue(prevValue => prevValue + 1)
@@ -13,7 +13,7 @@ export default function useCounter(initialState = 0) {
 		}
 	}
 	const reset = () => {
-		setValue(0)
+		setValue(initialState)
 	}
-	return [value, { increment, decrement, reset }, setValue]
+	return [value, { increment, decrement, reset }, setValue];
 }

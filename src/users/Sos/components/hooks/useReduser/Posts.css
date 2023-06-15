@@ -1,0 +1,58 @@
+*{padding: 0;margin: 0;box-sizing: border-box;}
+
+.flex-item{
+  background-color: rgb(87, 135, 8);
+  display: flex;
+  gap: 20px;
+  justify-content: space-between; 
+  padding: 15px;
+}
+ 
+.posts{
+  width:45%,1;
+  background-color:rgb(230, 163, 77);
+  border: 2px solid whitesmoke;
+  border-radius: 15px;
+  padding: 12px;
+}
+
+.btn-edit{
+  padding: 5px 5px;
+  border-radius:40px;
+  font-size: 18px;
+  color:rgb(245, 0, 0);
+  font-weight: 900;
+  background-color:rgb(56, 5, 5);
+  text-shadow: 1px 1px 1px white;
+  cursor: pointer;
+}
+
+.delbutton{
+  text-shadow: 1px 1px 1px rgb(0, 0, 0);
+  font-size: 20px;
+  padding: 0 5px;
+  cursor: pointer;
+}
+
+.idStyle{
+  font-size: 25px;
+  padding: 0 8px;
+  border: 2px solid red;
+  border-radius:10px;
+  text-shadow:1px 1px 1px rgb(3, 3, 3) ;
+  color: red;
+  font-weight: 600;
+  background-color: whitesmoke;
+}
+
+.titlepost{
+  color: whitesmoke;
+  font-weight: 900;
+  text-shadow: 2px 2px 2px black;
+}
+
+.left-top{
+  border: 1px solid black; 
+  width: 20%;
+}
+

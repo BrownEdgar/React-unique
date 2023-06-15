@@ -1,6 +1,4 @@
-
-
-import { Add_Developer, GET_POSTS, SORTED} from './actionTypes';
+import { ADD_DEVELOPER, GET_POSTS, SORTED} from './actionTypes';
 
 
 export const initialState = { 
@@ -14,16 +12,17 @@ export const initialState = {
 export default function reducer(state = initialState, action) {
 
 	switch (action.type) {
-		case GET_POSTS: return { ...state, posts: state.posts.concat(action.payload),actions: state.actions + 1}
+		case GET_POSTS: return { ...state, posts: action.payload}
 		case SORTED: return sorted(state)
-		case Add_Developer: return {...state, developers: [...state.developers, action.payload],actions: state.actions + 1}
-		
+		case ADD_DEVELOPER: return { ...state, developers: [...state.developers, action.payload], actions: state.actions + 1 }
 
 		default: return state;
 	}
 
 }
+
+
 const sorted = (state) => { 
-	return { ...state, arr: state.arr.sort((a, b) => a - b) ,actions: state.actions + 1}
+	return { ...state, arr: state.arr.sort((a, b) => a - b) , actions: state.actions + 1}
  }
 
