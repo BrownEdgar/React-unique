@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client'
-import App from "./users/Armen/Forms/App"
+import App from "./users/Armen/Forms/"
 
 
 import './index.css'
