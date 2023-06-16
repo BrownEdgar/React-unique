@@ -2,7 +2,7 @@ import React from 'react'
 import useCounter from './useCounter'
 import "./App.css"
 export default function App() {
-    const [count, { increment, decrement, reset }, setCount] = useCounter(0)
+    const [count, { increment, decrement, reset }, ] = useCounter(0)
     return (
         <div className='cont'>
             <h1>Count: {count}</h1>

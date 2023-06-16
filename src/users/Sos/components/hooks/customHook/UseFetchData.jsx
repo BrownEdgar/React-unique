@@ -3,7 +3,7 @@ import useRandom from './useRandom'
 
 
 export default function UseFetchData() {
-    const[count,{increment,decrement},setCount] = useRandom(0)
+    const[count,{increment,decrement} ] = useRandom(0)
      
   return (
     <div>
