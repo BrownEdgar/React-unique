@@ -24,7 +24,7 @@ export default function App() {
           setTimeout(() => {
             setPassError(false)
           },4000);
-        }else if(!/^[A-Z]/&&/\d/&&/[^a-z]/.test(password.value)){
+        }else if(!/^[A-Z]/.test(password.value)){
           setPassError(true)
           setTimeout(() => {
             setPassError(false)
