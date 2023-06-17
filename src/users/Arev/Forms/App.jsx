@@ -13,30 +13,30 @@ export default function App() {
 	]);
 	const [currentUserId, setCurrentUserId] = useState(-1);
 	const [mailError, setmailError] = useState(false);
-    const [passwordError, setpasswordError] = useState(false);
-    const [lengthError, setlengthError] = useState(false)
+	const [passwordError, setpasswordError] = useState(false);
+	const [lengthError, setlengthError] = useState(false)
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		const { username, password, email } = e.target;
-        const errorPass = /\d/.test(password.value)
+		const errorPass = /\d/.test(password.value)
 		const iseEmailExists = users.some(user => user.email.toLowerCase() === email.value.toLowerCase())
 		if (iseEmailExists) {
 			setmailError(true)
 			setTimeout(() => {
 				setmailError(false)
 			}, 6000)
-		}else if(!errorPass){  
-            setpasswordError(true)
-            setTimeout(() => {
-                setpasswordError(false)
-            },6000)
-         }else if(password.value.length < 10){
-            setlengthError(true)
-            setTimeout(() => {
-                setlengthError(false)
-            }, 6000);
-         } else {
+		} else if (!errorPass) {
+			setpasswordError(true)
+			setTimeout(() => {
+				setpasswordError(false)
+			}, 6000)
+		} else if (password.value.length < 10) {
+			setlengthError(true)
+			setTimeout(() => {
+				setlengthError(false)
+			}, 6000);
+		} else {
 			const user = {
 				id: Date.now(),
 				email: email.value,
@@ -62,7 +62,7 @@ export default function App() {
 				<div>
 					<label htmlFor="email">Email</label>
 					<input type="email" id="email" required />
-					<p className="error">{mailError ? 'this email is alredy exist!' : null}</p> 
+					<p className="error">{mailError ? 'this email is alredy exist!' : null}</p>
 				</div>
 				<div>
 					<label htmlFor="username">Username</label>
@@ -71,9 +71,9 @@ export default function App() {
 				<div>
 					<label htmlFor="password">Password</label>
 					<input type="password" id="password" required />
-                    <p className="error">{passwordError ? 'Password must contain numbers!': null}</p> 
-                    <p className="error">{lengthError ? 'Password is short!': null}</p>
-                    
+					<p className="error">{passwordError ? 'Password must contain numbers!' : null}</p>
+					<p className="error">{lengthError ? 'Password is short!' : null}</p>
+
 				</div>
 				<div>
 					<input type="submit" value="save" />

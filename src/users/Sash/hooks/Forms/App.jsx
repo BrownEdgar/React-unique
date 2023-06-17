@@ -57,7 +57,7 @@ export default function App() {
                 <div>
                     <label htmlFor='email'>Email</label>
                     <input type="email" id="email" required />
-                    {mailError ? <p className="error">This "Email" is alredy exist!</p>: null}
+                    {mailError ? <p className="error">This "Email" is alredy exist!</p> : null}
                 </div>
                 <div>
                     <label htmlFor='username'>Username</label>
@@ -66,7 +66,7 @@ export default function App() {
                 <div>
                     <label htmlFor='password'>Password</label>
                     <input type="password" id="password" required />
-                    {passwordError ? <p className='error'>Your "Password" is short or does not contain a number!</p>: null}
+                    {passwordError ? <p className='error'>Your "Password" is short or does not contain a number!</p> : null}
                 </div>
                 <div>
                     <input type="submit" value="Save" />
