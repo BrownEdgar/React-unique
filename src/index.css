@@ -27,3 +27,17 @@ pre {
 	font-size: 20px;
 	white-space: pre-wrap;
 }
+
+
+form {
+	margin: 40px;
+}
+form div {
+	width: 150px;
+	margin: 10px ;
+}
+form div > input {
+	line-height: 1.6;
+	margin-right: 10px;
+	padding: 6px;
+}
