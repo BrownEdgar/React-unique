@@ -1,8 +1,8 @@
 import { ErrorMessage, Field,Form,Formik } from 'formik'
-import {string,number} from 'yup';
+import {string,number, object} from 'yup';
 import"./App.css"
 
-const  schema = ({
+const schema = object({
     firstName: string().min(3).max(10).required(),
     lastName:  string().min(4).max(12).required(),
     age:number().min(18).max(99).required(),
@@ -18,7 +18,7 @@ const handleSubmit = (values) => {
     <div className='header'>
         <Formik
         onSubmit={handleSubmit}
-        schema={schema}
+        validationSchema={schema}
         validateOnBlur={true}
         validateOnChange={false}
         initialValues={
@@ -39,7 +39,7 @@ const handleSubmit = (values) => {
               <div className='lastName'>
                 <label htmlFor='lastName'>Last Name</label>
                 <Field type='text' id='lastName' name='lastName' placeholder='lastName'/>
-                <ErrorMessage component="p" name='lastName '/>
+                <ErrorMessage component="p" name='lastName'/>
               </div>
               <div className='age'>
                 <label htmlFor='age'>Age</label>
@@ -52,7 +52,7 @@ const handleSubmit = (values) => {
                 <ErrorMessage component="p" name='email'/>
               </div>
               <div className='submit'>
-                <Field type='submit' value ='register'id='submit'name='submit'/>
+                <Field type='submit' value ='register' id='submit'/>
               </div>
             </Form>
         </Formik>
