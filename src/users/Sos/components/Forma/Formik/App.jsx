@@ -1,8 +1,15 @@
 import { ErrorMessage, Field,Form,Formik } from 'formik'
+<<<<<<< HEAD
 import {string,number,object} from 'yup';
 import"./App.css"
 
 const  schema = object({
+=======
+import {string,number, object} from 'yup';
+import"./App.css"
+
+const schema = object({
+>>>>>>> a6844736faacfeb6e3f7ce7f5574221c9b1a0840
     firstName: string().min(3).max(10).required(),
     lastName:  string().min(4).max(12).required(),
     age:number().min(18).max(99).required(),
@@ -52,7 +59,11 @@ const handleSubmit = (values) => {
                 <ErrorMessage component="p" name='email'/>
               </div>
               <div className='submit'>
+<<<<<<< HEAD
                 <Field type='submit' value ='register'id='submit'/>
+=======
+                <Field type='submit' value ='register' id='submit'/>
+>>>>>>> a6844736faacfeb6e3f7ce7f5574221c9b1a0840
               </div>
             </Form>
         </Formik>
