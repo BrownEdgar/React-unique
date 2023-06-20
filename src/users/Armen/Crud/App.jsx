@@ -66,8 +66,8 @@ export default function App() {
         <MainForm addUser={addUser} />
       </div>
       <div className="buttons">
-        <button onClick={() => handleSort('firstname')}>Sort by First Name {sortedColumn === 'firstname' && sortOrder === 'asc' ? '▲' : '▼'}</button>
-        <button onClick={() => handleSort('lastname')}>Sort by Last Name {sortedColumn === 'lastname' && sortOrder === 'asc' ? '▲' : '▼'}</button>
+        <button onClick={() => handleSort('firstname')}>First Name {sortedColumn === 'firstname' && sortOrder === 'asc' ? '▲' : '▼'}</button>
+        <button onClick={() => handleSort('lastname')}>Last Name {sortedColumn === 'lastname' && sortOrder === 'asc' ? '▲' : '▼'}</button>
         <button onClick={handleFilter}>
           {filterGender === '' ? 'Show All' : `Show ${filterGender.charAt(0).toUpperCase()}${filterGender.slice(1)}`}
         </button>
