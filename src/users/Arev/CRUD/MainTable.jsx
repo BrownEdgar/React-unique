@@ -1,5 +1,6 @@
 // eslint-disable-next-line react/prop-types
 export default function MainTable({ users }) {
+	console.log(users)
 	return (
 		<div className='MainTable'>
 			<article className='MainTable__item MainTable__item-first'>
