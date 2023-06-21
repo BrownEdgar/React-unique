@@ -16,15 +16,36 @@ export default function App() {
 			payload: { user }
 		})
 	}
-	const handleSort = (values) => {
-		const{firstname}=useState
-         if(sortResult){
-			firstname.sort((a,b) => {
-				a.value - b.value
-			})
-		 }
-		 setSortResult([])
+	const handleFirstname = (user) => {
+		dispatch({
+			type:"SORT_FIRSTNAME",
+		})
 	}
+
+	const handleLastname = (user) => {
+		dispatch({
+			type:"SORT_LASTNAME",
+		})
+	}
+
+	const handleAge = (user) => {
+		dispatch({
+			type:"SORT_AGE",
+		})
+	}
+
+	const handleMale = (user) => {
+		dispatch({
+			type:"SORT_MALE",
+		})
+	}
+
+	const handleFemale = (user) => {
+		dispatch({
+			type:"SORT_FEMALE",
+		})
+	}
+
 
 	return (
 		<div className='App'>
@@ -33,22 +54,12 @@ export default function App() {
 				<MainForm addUser={addUser}/>
 			</div>
 			<div className="buttons">
-				<button onClick={()=>handleSort('firstname')}>by firstname</button>
-			</div>
-			<div className="buttons">
-				<button onClick={()=>handleSort({lastname})}>by lastname</button>
-			</div>
-			<div className="buttons">
-				<button onClick={()=>handleSort({age})}>by age</button>
-			</div>
-			<div className="buttons">
+				<button onClick={handleFirstname}>by firstname</button>
+				<button onClick={handleLastname}>by lastname</button>
+				<button onClick={handleAge}>by age</button>
 				<button>by email</button>
-			</div>
-			<div className="buttons">
-				<button onClick={()=>handleSort({male})}>by male</button>
-			</div>
-			<div className="buttons">
-				<button onClick={()=>handleSort({female})}>by female</button>
+				<button onClick={handleMale}>by male</button>
+				<button onClick={handleFemale}>by female</button>
 			</div>
 
 
