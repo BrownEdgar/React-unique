@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from 'react';
+import  { useReducer, useState } from 'react';
 import reducer, { initialState } from './reduse';
 
 import './App.scss';

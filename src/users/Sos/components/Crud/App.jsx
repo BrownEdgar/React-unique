@@ -1,14 +1,12 @@
 import { useReducer, useState } from 'react'
 import reducer, { initialState } from './reducer'
-
-import './App.scss'
-
 import MainForm from './MainForm'
 import MainTable from './MainTable';
 
+import './App.scss'
+
 export default function App() {
 	const [users, dispatch] = useReducer(reducer, initialState);
-	const [sortResult,setSortResult] = useState(''); 
 
 	const addUser = (user) => { 
 		dispatch({
@@ -16,31 +14,31 @@ export default function App() {
 			payload: { user }
 		})
 	}
-	const handleFirstname = (user) => {
+	const handleFirstname = () => {
 		dispatch({
 			type:"SORT_FIRSTNAME",
 		})
 	}
 
-	const handleLastname = (user) => {
+	const handleLastname = () => {
 		dispatch({
 			type:"SORT_LASTNAME",
 		})
 	}
 
-	const handleAge = (user) => {
+	const handleAge = () => {
 		dispatch({
 			type:"SORT_AGE",
 		})
 	}
 
-	const handleMale = (user) => {
+	const handleMale = () => {
 		dispatch({
 			type:"SORT_MALE",
 		})
 	}
 
-	const handleFemale = (user) => {
+	const handleFemale = () => {
 		dispatch({
 			type:"SORT_FEMALE",
 		})
