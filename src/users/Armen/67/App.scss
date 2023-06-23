@@ -1,3 +1,9 @@
+body {
+  background-image: url("https://images.squarespace-cdn.com/content/v1/5f329f79c232cb4ecb69ba9a/1612605371100-L8OPRP7JIBXK16K0T807/food+background+for+restaurant+menu-5.jpg");
+  background-repeat: repeat;
+  background-size: contain;
+}
+
 .App {
   width: 80%;
   margin: 150px auto;
@@ -15,15 +21,15 @@
 
   &__lists {
     display: flex;
-    flex-wrap: wrap; /* Added flex-wrap to wrap the cards */
-    align-items: flex-start; /* Adjust alignment as needed */
-    gap: 20px; /* Added gap between cards */
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 20px;
   }
 
   .App__cake {
     display: flex;
-    flex-direction: column;
-    width: calc(50% - 10px); /* Adjust the width based on your desired layout */
+    flex-direction: row;
+    width: calc(100% - 10px);
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
@@ -31,9 +37,10 @@
   }
 
   &__imageBox {
-    flex-basis: 50%;
+    flex-basis: 40%; 
     height: 240px;
     margin-bottom: 20px;
+    margin-right: 10px;
 
     img {
       width: 100%;
@@ -44,6 +51,7 @@
   }
 
   &__content {
+    flex-basis: 60%; 
     h2 {
       color: #222;
       margin-bottom: 10px;
