@@ -1,88 +1,83 @@
 .App {
-    width: 80%;
-    margin: 150px auto;
-    padding: 1em;
-    background-color: #dedede;
-    min-height: 350px;
-  
-    &__flex {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
+  width: 80%;
+  margin: 150px auto;
+  padding: 1em;
+  background-color: #dedede;
+  min-height: 350px;
+
+  &__flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__lists {
+    display: flex;
+    flex-wrap: wrap; /* Added flex-wrap to wrap the cards */
+    align-items: flex-start; /* Adjust alignment as needed */
+    gap: 20px; /* Added gap between cards */
+  }
+
+  .App__cake {
+    display: flex;
+    flex-direction: column;
+    width: calc(50% - 10px); /* Adjust the width based on your desired layout */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  &__imageBox {
+    flex-basis: 50%;
+    height: 240px;
+    margin-bottom: 20px;
+
+    img {
+      width: 100%;
       height: 100%;
-    }
-  
-    &__lists {
-      display: grid; /* Change to grid layout */
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust the column size as needed */
-      grid-gap: 20px; /* Add gap between items */
-      align-items: center;
-    }
-  
-    &__cake {
-      display: flex;
-      background-color: white;
-      border-radius: 4px;
-      padding: 20px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    }
-  
-    &__imageBox {
-      flex-basis: 50%;
-      height: 240px;
-      margin-right: 20px;
-      background-color: red;
-  
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-  
-    &__content {
-      flex-basis: 50%;
-  
-      h2 {
-        color: #222;
-        margin-bottom: 20px;
-        font-size: 30px;
-        position: relative;
-  
-        &::before {
-          content: "";
-          width: 80%;
-          height: 1px;
-          position: absolute;
-          top: calc(50% - 1px);
-          background: rgb(0, 0, 0);
-          background: linear-gradient(
-            90deg,
-            rgba(0, 0, 0, 1) 0%,
-            rgba(0, 0, 0, 0) 100%
-          );
-          right: 0;
-        }
-      }
-  
-      p {
-        margin-bottom: 20px;
-        line-height: 1.6;
-      }
-    }
-  
-    form {
-      width: 90%;
-      margin-bottom: 16px;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-  
-      select {
-        padding: 5px 10px;
-        font-size: 16px;
-      }
+      object-fit: cover;
+      border-radius: 8px;
     }
   }
-  
+
+  &__content {
+    h2 {
+      color: #222;
+      margin-bottom: 10px;
+      font-size: 24px;
+      position: relative;
+
+      &::before {
+        content: '';
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        bottom: -5px;
+        background: rgb(0, 0, 0);
+        background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+        right: 0;
+      }
+    }
+
+    p {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+  }
+
+  form {
+    width: 90%;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    select {
+      padding: 5px 10px;
+      font-size: 16px;
+    }
+  }
+}
