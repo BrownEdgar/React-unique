@@ -84,9 +84,9 @@ export const initialState = [
 export default (state = initialState, { type, payload }) => {
 	switch (type) {
 		case "ADD_USER": return [...state, payload.user]
-        case "SORT_USERAGE": return [...state.sort((a,b)=> a.age-b.age)]
-        case "SORT_FIRSTNAME": return [...state.sort((a,b) => a.firstname.charCodeAt()- b.firstname.charCodeAt())]
-        case "SORT_EMAIL": return [...state.sort((a,b) =>a.email.charCodeAt() - b.email.charCodeAt())]
+        case "SORT_USERAGE": return state.toSorted((a,b)=> a.age - b.age)
+        case "SORT_FIRSTNAME": return [...state.sort((a,b) => a.firstname.charCodeAt(0) - b.firstname.charCodeAt(0))]
+        case "SORT_EMAIL": return [...state.sort((a,b) => a.email.charCodeAt(0) - b.email.charCodeAt(0))]
         case "GENDERMALE" : return [...state.filter(user => {
             return user.gender === "male"
         })]
