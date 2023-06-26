@@ -1,0 +1,76 @@
+.App {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #0E121E;
+  }
+  
+  .movie {	
+	width: 500px;
+	min-height: 340px;
+	display: flex;
+	align-items: center;
+	align-content: start;
+	flex-wrap: wrap;
+	gap: 16px;
+	border-radius: 14px;
+	padding: 1em;
+	color: beige;
+  }
+  
+  .movie > div {
+	position: relative;
+	width: 200px;
+	height: 120px;
+	text-align: center;
+	background-color: #1f2843;
+	padding: 1em 1.6em;
+	border-radius: 14px;
+  }
+  
+  .movie > div.expensive {
+	background-color: #951620;
+  }
+  
+  .movie > div.highlighted {
+	background-color: green;
+  }
+  button{
+	padding: 8px 15px;
+	background-color: blue;
+	color: white;
+	font-weight: 700;
+	border-radius: 15px;
+	border: 0;
+	transition: 0.3s;
+} 
+button:hover{
+	background-color: red;
+	transition: 0.5s;
+} 
+
+.is3d-label {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background-color: #951620;
+	padding: 0.5em;
+	border-radius: 50%;
+	color: white;
+	font-weight: bold;
+  }
+
+  .language-flag {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	
+  }
+  
+  .language-flag img {
+	width: 30px; 
+	border-radius: 50%;
+  }
+  

@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 import './App.scss';
-import MyLoader from './loader/Myloader';
 
 export default function App() {
   const [cakes, setCakes] = useState([
@@ -121,17 +120,9 @@ export default function App() {
 
 const [selectedCategory, setSelectedCategory] = useState("");
 
-const [isLoading, setIsLoading] = useState(false)
-
 const handleChange = (e) => {
   const { value } = e.target;
-
-  setIsLoading(true);
-  setTimeout(() => {
-    setIsLoading(false);
-    setSelectedCategory(value);
-  }, 1200)
-  
+  setSelectedCategory(value);
 };
 
 return (
@@ -158,7 +149,6 @@ return (
         </div>
       </form>
       <div className="App__lists">
-        {isLoading ? <MyLoader /> : null}
         {cakes
           .filter((cake) =>
             selectedCategory ? cake.category === selectedCategory : true
