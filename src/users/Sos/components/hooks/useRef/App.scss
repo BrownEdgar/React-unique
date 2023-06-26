@@ -1,0 +1,82 @@
+.App{
+    width: 100%;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(7, 7, 26);
+}
+
+.movie{
+    width: 500px;
+    display: flex;
+    min-height: 340px;
+    align-items: center;
+    align-content:start ;
+    flex-wrap: wrap;
+    gap: 16px;
+    border-radius: 14px;
+    padding: 1em;
+    color: beige;
+
+    & div{
+    text-align: center;
+    background-color:rgb(25, 28, 68);
+    padding: 1em 1.6em;
+    border-radius: 14px;
+    & span{
+    color: rgb(152, 146, 55);
+    }
+
+    & p{
+    position: relative;
+    }
+
+    &.expensid{
+    background-color: rgb(177, 20, 20);
+    }
+
+    &.language::after{
+    position: absolute;
+    content: '';
+    border-radius: 50%;
+    color: red;
+    background-image: url('../useRef/image/85634751-the-russian-flag.jpg');
+    background-position: center;
+    background-size: cover;
+    width: 20%;
+    height: 20%;
+    right:-40px;
+    top: -20px;
+    }
+
+    &.isformat::after{
+    content: '3D';
+    position: absolute;
+    right: 40px;
+    top: 10px;
+    background-color:rgb(127, 115, 115);
+    padding: 10px;
+    border-radius: 50%;
+    }
+    &.time{
+    color:red;
+    }
+}
+}
+button{
+    padding: 7px 22px;
+    border-radius: 18px;
+    background-color: rgb(95, 116, 11);
+    border: 3px solid rgb(244, 241, 241);
+    color: white;
+    font-weight: 700;
+    text-shadow: 1px 1px 1px black;
+    transition: .5s;
+}
+button:hover{
+    background-color: white;
+    color:  rgb(95, 116, 11);
+    border: 3px solid  rgb(95, 116, 11);
+}
+

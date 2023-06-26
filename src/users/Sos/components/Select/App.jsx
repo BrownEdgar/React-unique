@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './App.scss'
+import MyLoader from '../loader/MyLoader';
 
 export default function App() {
     const [cars,setCars]=useState([{
@@ -199,7 +200,25 @@ export default function App() {
                               <option key={index} value={index}>{elem}</option>
                           )
                       })
-              }
+              },
+              {/* {
+                person
+                .map(cars => cars.name)
+                .map((elem, index) => {
+                    return (
+                        <option key={index} value={index}>{elem}</option>
+                    )
+                })
+              },
+              {
+                company
+                .map(cars => cars.name)
+                .map((elem, index) => {
+                    return (
+                        <option key={index} value={index}>{elem}</option>
+                    )
+                })
+              } */}
 
           </select>
           <select name="person" id="person" onChange={handleChange}>
@@ -215,7 +234,7 @@ export default function App() {
           </select>
           <select name="company" id="company" onChange={handleChange}>
               {
-                  person
+                  company
                       .map(company => company.name)
                       .map((elem, index) => {
                           return (
@@ -226,6 +245,7 @@ export default function App() {
           </select>
       </form>
       <div className='App__lists'>
+        <MyLoader/>
           <div className='App__imageBox'>
               <img src={cars[currenAllId].imges} alt="" />
           </div>
