@@ -4,6 +4,7 @@ import './App.scss';
 
 import englishFlag from './images/english.jpg';
 import russianFlag from './images/russian.jpg';
+import armeniaFlag from './images/armenia.jpg';
 
 export default function App() {
   const [data, setData] = useState(json);
@@ -63,6 +64,12 @@ export default function App() {
             {elem.language === 'Russian' && (
               <div className="language-flag">
                 <img src={russianFlag} alt="Russian Flag" />
+              </div>
+            )}
+            {elem.is3d && <div className="is3d-label">3D</div>}
+            {elem.language === 'Armenia' && (
+              <div className="language-flag">
+                <img src={armeniaFlag} alt="Armenia Flag" />
               </div>
             )}
             <h2>{elem.time}</h2>
