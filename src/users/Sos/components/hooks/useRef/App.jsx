@@ -6,13 +6,9 @@ import './App.scss'
 export default function App() {
   
     const [data, setData] = useState(json)
-
     const [expensid, setExpensid] = useState([])
-
     const [languageId,steLanguage] = useState([])
-
     const [is3dId,setIs3d] = useState([])
-
     const [timeId,setDuration] = useState([])
 
    useEffect(() => {

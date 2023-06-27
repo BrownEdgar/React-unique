@@ -7,11 +7,10 @@
 	background-color: #0E121E;
 }
 
-.movie {	
+.movie {
 	width: 100%;
 	min-height: 340px;
 	display: flex;
-	align-items: center;
 	align-content: start;
 	flex-wrap: wrap;
 	gap: 16px;
@@ -19,49 +18,68 @@
 	padding: 1em;
 	color: beige;
 }
-.movie .text{
-    background-color: rgb(152, 17, 17);
+
+.movie>div:first-child {
+	flex-basis: 100%;
 }
-.movie .text button{
+
+.movie>div {
+	flex-basis: 32%;
+	flex-grow: 1;
+
+}
+
+.movie .text {
+	background-color: rgb(152, 17, 17);
+}
+
+.movie .text button {
 	font-size: 16px;
 	background-color: #0E121E;
 	color: wheat;
 	padding: 1em;
 	display: flex;
-	border-radius:14px ;
-	border: 1px solid #951620 ;
+	border-radius: 14px;
+	border: 1px solid #951620;
 	cursor: pointer;
 }
-.movie .text button:hover{
+
+.movie .text button:hover {
 	background-color: white;
 	color: #0E121E;
 }
-.movie .img_movie{
+
+.movie .img_movie {
 	position: relative;
 }
-.movie > div {
+
+.movie>div {
 	text-align: center;
-	background-color:rgb(73, 71, 71);
-    width: 100%;
+	background-color: rgb(73, 71, 71);
+	width: 100%;
 	padding: 1em 1.6em;
 	line-height: 24px;
 	border-radius: 14px;
 }
-.movie h2{
+
+.movie h2 {
 	color: #000206;
 	font-weight: 700;
-   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-   letter-spacing: 2px;
-   margin-bottom: 15px;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	letter-spacing: 2px;
+	margin-bottom: 15px;
 }
+
 .movie>div.expensive {
 	background-color: #951620;
 }
-.movie > div.duration{
+
+.movie>div.duration {
 	background-color: red;
 }
-.movie .rus::after{
-    background-image: url(./rus.png);
+
+.movie .language-russian::after {
+	background-image: url(./rus.png);
 	padding: 25px;
 	position: absolute;
 	content: '';
@@ -71,7 +89,8 @@
 	right: 0;
 	top: 0;
 }
-.movie .eng::after{
+
+.movie .language-english::after {
 	background-image: url(./usa.png);
 	padding: 25px;
 	position: absolute;
@@ -82,8 +101,9 @@
 	right: 0;
 	top: 0;
 }
-.movie .is3D::after{
-	background-image: url("3D");
+
+.movie .is3D::after {
+
 	content: "3D";
 	position: absolute;
 	background-color: #03113d;
@@ -91,19 +111,22 @@
 	padding: 12px;
 	border-radius: 50%;
 	top: 65px;
-	right:0;
+	right: 0;
 }
-.movie span{
-	color:#03113d;
+
+.movie span {
+	color: #03113d;
 	line-height: 3px;
 	font-size: 20px;
 	font-weight: 800;
 }
+
 .movie p {
 	color: #000206;
 	font-weight: 700;
 }
-.buttons{
+
+.buttons {
 	display: flex;
-	justify-content:space-between ;
+	justify-content: space-between;
 }
