@@ -49,52 +49,39 @@ export default function Component(props) {
   };
 
   return (
-    <div
-      className={classNames(style.container, {
-        [`${style.dark}`]: props.type === 'dark',
-        [`${style.bisqueBackground}`]: state.buttonOneClicked,
-        [`${style.blackColor}`]: state.buttonOneClicked,
-        [`${style.scaled}`]: state.buttonTwoClicked,
-        [`${style.backgroundImage}`]: state.buttonThreeClicked,
-      })}
-    >
-      {props.title && (
-        <>
-          <h1>{props.title}</h1>
-          <hr />
-        </>
-      )}
-      {state.buttonThreeClicked ? (
-        <div className={style.imageContainer} style={{ backgroundImage: `url(${image})` }}>
-          {/* You can add any content inside the div */}
-        </div>
-      ) : (
-        props.children && (
-          <div className={classNames({ [`${style.hidden}`]: state.hideParagraphs })}>
-            {props.children}
+    <>
+      <div
+        className={classNames(style.container, {
+          [`${style.dark}`]: props.type === 'dark',
+          [`${style.bisqueBackground}`]: state.buttonOneClicked,
+          [`${style.blackColor}`]: state.buttonOneClicked,
+          [`${style.scaled}`]: state.buttonTwoClicked,
+          [`${style.backgroundImage}`]: state.buttonThreeClicked,
+        })}
+      >
+        {props.title && (
+          <>
+            <h1>{props.title}</h1>
+            <hr />
+          </>
+        )}
+        {state.buttonThreeClicked ? (
+          <div className={style.imageContainer} style={{ backgroundImage: `url(${image})` }}>
+            {/* You can add any content inside the div */}
           </div>
-        )
-      )}
-      <button
-        className={classNames({ [`${style.buttonBorder}`]: state.buttonOneClicked })}
-        onClick={handleButtonOneClick}
-      >
-        Button 1
-      </button>
-      <button
-        className={classNames({ [`${style.buttonBorder}`]: state.buttonTwoClicked })}
-        onClick={handleButtonTwoClick}
-      >
-        Button 2
-      </button>
-      <button
-        className={classNames({ [`${style.buttonBorder}`]: state.buttonThreeClicked })}
-        onClick={handleButtonThreeClick}
-      >
-        Button 3
-      </button>
+        ) : (
+          props.children && (
+            <div className={classNames({ [`${style.hidden}`]: state.hideParagraphs })}>
+              {props.children}
+            </div>
+          )
+        )}
+      </div>
+      <button onClick={handleButtonOneClick}>Button 1</button>
+      <button onClick={handleButtonTwoClick}>Button 2</button>
+      <button onClick={handleButtonThreeClick}>Button 3</button>
       <button onClick={handleButtonFourClick}>Button 4</button>
-      <button onClick={handleButtonResetClick}>Button 5</button>
-    </div>
+      <button onClick={handleButtonResetClick}>RESET</button>
+    </>
   );
 }
