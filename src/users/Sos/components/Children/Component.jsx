@@ -7,8 +7,16 @@ export default function Component(props) {
     <div  className={classNames (style.contanier,{
       [`${style.dark}`]:props.type === 'dark',
       [`${style.light}`]:props.type === 'light',
-      [`${style.URL}`]:props.whithImage === 'url'
-    })}>
+      [`${style.small}`]: props.size === 'small',
+      [`${style.medium}`]: props.size === 'medium',
+      [`${style.large}`]: props.size === 'large',
+    })}
+    style = {{
+      backgroundImage: `url(${props.withImage})`,
+      backgroundSize: 'cover',
+   }}
+    >
+   
         {props.title ? (
         <>
         <h1>{props.title}</h1>
