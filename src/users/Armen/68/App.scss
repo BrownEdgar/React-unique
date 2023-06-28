@@ -5,9 +5,9 @@
 	justify-content: center;
 	align-items: center;
 	background-color: #0E121E;
-  }
-  
-  .movie {	
+}
+
+.movie {
 	width: 500px;
 	min-height: 340px;
 	display: flex;
@@ -18,9 +18,9 @@
 	border-radius: 14px;
 	padding: 1em;
 	color: beige;
-  }
-  
-  .movie > div {
+}
+
+.movie>div {
 	position: relative;
 	width: 200px;
 	height: 120px;
@@ -28,16 +28,17 @@
 	background-color: #1f2843;
 	padding: 1em 1.6em;
 	border-radius: 14px;
-  }
-  
-  .movie > div.expensive {
+}
+
+.movie>div.expensive {
 	background-color: #951620;
-  }
-  
-  .movie > div.highlighted {
+}
+
+.movie>div.highlighted {
 	background-color: green;
-  }
-  button{
+}
+
+button {
 	padding: 8px 15px;
 	background-color: blue;
 	color: white;
@@ -45,11 +46,12 @@
 	border-radius: 15px;
 	border: 0;
 	transition: 0.3s;
-} 
-button:hover{
+}
+
+button:hover {
 	background-color: red;
 	transition: 0.5s;
-} 
+}
 
 .is3d-label {
 	position: absolute;
@@ -60,17 +62,18 @@ button:hover{
 	border-radius: 50%;
 	color: white;
 	font-weight: bold;
-  }
+}
 
-  .language-flag {
+.language-flag {
 	position: absolute;
 	bottom: 10px;
 	right: 10px;
-	
-  }
-  
-  .language-flag img {
-	width: 30px; 
+
+}
+
+.language-flag img {
+	width: 30px;
+	height: 30px;
+	object-fit: cover;
 	border-radius: 50%;
-  }
-  
+}
