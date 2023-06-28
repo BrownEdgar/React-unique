@@ -1,63 +1,69 @@
+.contanier {
+	max-width: 400px;
+	padding: 1em;
+	border: 1px solid black;
+	background-color: whitesmoke;
+	margin: 20px 40px;
+	border-radius: 15px;
+	line-height: 1.6;
+}
 
-.contanier{
-    max-width: 400px;
-    padding: 1em;
-    border: 1px solid black;
-    background-color: whitesmoke;
-    margin: 20px 40px;
-    border-radius: 15px;
-    line-height: 1.6;
+.contanier h1 {
+	margin-top: 16px;
+	text-align: center;
+	letter-spacing: 5px;
+	font-style: italic;
 }
-.contanier h1{
-    margin-top: 16px;
-    text-align: center;
-    letter-spacing: 5px;
-    font-style: italic;
+
+p {
+	margin: 26px;
 }
-p{
-    margin: 26px ;
+
+hr {
+	margin: 10px auto;
+	width: 100%;
+	border: 0;
+	background-color: brown;
+	height: 1px;
+	text-transform: capitalize;
 }
-hr{
-    margin: 10px auto;
-    width: 100%;
-    border: 0;
-    background-color: brown;
-    height: 1px;
-    text-transform: capitalize;
+
+button {
+	padding: 0.4rem 1rem;
+	margin-top: 16px;
+	background-color: brown;
+	font-weight: 700;
+	font-size: 14px;
+	color: whitesmoke;
+	font-size: 24px;
+	border-radius: 8px;
+	margin: 10px;
 }
-button{
-    padding: 0.4rem 1rem;
-    margin-top: 16px;
-    background-color: brown;
-    font-weight: 700;
-    font-size: 14px;
-    color: whitesmoke;
-    font-size: 24px;
-    border-radius: 8px;
-    margin: 10px;
+
+.dark {
+	background-color: rgb(6, 6, 97);
+	color: whitesmoke;
 }
-.dark{
-    background-color: rgb(6, 6, 97);
-    color: whitesmoke;
+
+.light {
+	background-color: lightblue;
+	color: rgb(3, 3, 82);
 }
-.light{
-    background-color: lightblue;
-    color: rgb(3, 3, 82);
+
+.whithImage {
+	background-size: cover;
+	width: 100%;
+	height: 100%;
 }
-.whithImage{
-    background-image: url();
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-}
+
 .small {
-    max-width: 200px;
+	max-width: 200px;
 }
-  
+
 .medium {
-    max-width: 300px;
+	max-width: 300px;
 }
-  
+
 .large {
-    max-width: 400px;
+	max-width: 400px;
 }

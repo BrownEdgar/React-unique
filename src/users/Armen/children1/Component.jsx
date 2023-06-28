@@ -1,4 +1,4 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
 import classNames from 'classnames';
 import style from './Component.module.css';
 
@@ -6,11 +6,8 @@ export default function Component(props) {
   return (
     <div
       className={classNames(style.container, {
-        [`${style.dark}`]: props.type === 'dark',
-        [`${style.light}`]: props.type === 'light',
-        [`${style.small}`]: props.size === 'small',
-        [`${style.medium}`]: props.size === 'medium',
-        [`${style.large}`]: props.size === 'large',
+				[`${style[props.type]}`]: !!props.type,
+				[`${style[props.size]}`]: !!props.size,
       })}
       style={{
         backgroundImage: `url(${props.withImage})`,
