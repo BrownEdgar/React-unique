@@ -1,0 +1,69 @@
+.container {
+	max-width: 400px;
+	padding: 1rem;
+	border: 1px solid #000;
+	background-color: #dedede;
+	margin: 20px 40px;
+	line-height: 1.6;
+}
+
+.container h1 {
+	margin-bottom: 10px;
+	font-size: 24px;
+	text-transform: capitalize;
+}
+
+hr {
+	width: 80%;
+	margin: 10px auto;
+	border: 0;
+	background-color: white;
+	height: 1px;
+}
+
+.dark {
+	background-color: #111;
+	color: beige;
+	box-shadow: 0 5px 5px 2px gray;
+}
+
+.light {
+	background-color: rgb(3, 192, 255);
+	color: rgb(44, 26, 44);
+	border: 1px solid rgb(44, 26, 44);
+	text-shadow: 0 2px 0px whitesmoke;
+	box-shadow: 0 5px 5px 2px black;
+}
+
+.default {
+	background-color: white;
+	color: #000;
+}
+
+button {
+	font-size: 14px;
+	padding: 0.6rem 1rem;
+	border-radius: 12px;
+	margin: 20px;
+	background-color: bisque;
+	border: 0;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.border {
+	border-radius: 20px;
+}
+
+.sm {
+	max-width: 300px;
+}
+
+.md {
+	max-width: 600px;
+}
+
+.lg {
+	max-width: 100vw;
+}
+
