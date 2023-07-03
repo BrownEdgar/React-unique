@@ -7,9 +7,7 @@ export default function Layouts() {
 		<div>
 			<Navbar/>
 			<Outlet />
-			<footer>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, quas!</p>
-			</footer>
+
 		</div>
 	)
 }
