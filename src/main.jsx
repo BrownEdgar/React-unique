@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client'
-import App from "./users/Sos/components/React-Router/App"
+import App from "./users/Armen/react_router/App"
 import './index.css'
 ReactDOM.createRoot(document.getElementById('root')).render(<App />)
 
@@ -9,4 +9,3 @@ ReactDOM.createRoot(document.getElementById('root')).render(<App />)
 // git commit -m "your message here..."
 // git pull
 // git push 
-t
