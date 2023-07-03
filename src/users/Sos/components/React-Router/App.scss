@@ -1,0 +1,16 @@
+.App{
+    text-align: center;
+    h1{
+       margin-top: 25px 0;
+    }
+    &::before {
+        content: '';
+        width: 61%;
+        height: 1px;
+        position: absolute;
+        top: calc(6% - 1px);
+        background: rgb(246, 240, 240);
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.874) 0%, rgba(245, 242, 242, 0.189) 100%);
+        right:39%;
+    }
+}

@@ -13,7 +13,7 @@ export default function App() {
 
   return (
     <div>
-        <Component title="props children" type = 'light' whithImage='https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?cs=srgb&dl=pexels-pixabay-268533.jpg&fm=jpg' size='md'>
+        <Component title="props children" type = 'dark' whithImage='https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?cs=srgb&dl=pexels-pixabay-268533.jpg&fm=jpg' size='sm'>
         <button className={classNames(`${btntype}-dark`)}>Dark</button>
         <button className={classNames(`${btntype}-light`)}>Light</button>
          <h1>Component.</h1>

@@ -1,0 +1,31 @@
+.head{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+    h2{
+        font-weight: 800;
+        font-size: 40px;
+        color: rgb(183, 4, 4);
+        width: 40%;
+        border-radius: 5px;
+        letter-spacing: 5px;
+        box-shadow: 2px 2px 8px gray;
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.753);
+    }
+}
+.conponents{
+    margin-top: 26px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    p{
+        color: gray;
+        box-shadow: 2px 2px 8px gray;
+        width: 95%;
+        height: 400px;
+        border-radius: 5px;
+        padding-top: 6px;
+    }
+}

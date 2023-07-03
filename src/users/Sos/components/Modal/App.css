@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.contanier{
+    width: 900px;
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 26px;
+}
+.contanier > div{
+    background-color: wheat;
+    padding: 12px;
+    border-radius: 12px;
+    height: 120px;
+    border: 2px solid aqua;
+}
+button{
+    padding: 0.6rem 1rem;
+    border-radius: 10px;
+    margin: 20px 0;
+    background-color: red;
+    font-weight: 600;
+    cursor: pointer;
+    color: whitesmoke;
+}
