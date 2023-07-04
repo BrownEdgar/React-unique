@@ -10,6 +10,7 @@ import ROUTES from './routes/routes'
 import {Route, RouterProvider,createRoutesFromElements, createBrowserRouter} from "react-router-dom"
 
 import './App.scss'
+import Todos from './Pages/Todos'
 
 // const router = createBrowserRouter(
 //     createRoutesFromElements(
@@ -46,6 +47,14 @@ const router = createBrowserRouter([
                 path: ROUTES.CONTACT,
                 element: <Contact />,
             },
+            {
+              path: ROUTES.TODOS,
+              element: <Todos />,
+          },
+          {
+            path: ROUTES.TODO,
+            element: <Todo />,
+        },
             {
             path: ROUTES.ERRORPAGE,
             element: <ErrorPage />,

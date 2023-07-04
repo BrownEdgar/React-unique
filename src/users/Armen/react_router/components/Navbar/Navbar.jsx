@@ -21,6 +21,9 @@ export default function Navbar() {
             <li>
                 <NavLink to={ROUTES.PRODUCTS} className={({isActive}) => isActive ? "active_link" : ""}>Products</NavLink> 
             </li>
+            <li>
+                <NavLink to={ROUTES.TODOS} className={({isActive}) => isActive ? "active_link" : ""}>Todos</NavLink> 
+            </li>
           </ul>
         </nav>
     </header>
