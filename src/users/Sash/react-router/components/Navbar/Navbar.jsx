@@ -21,6 +21,9 @@ export default function Navbar() {
           <li>
             <NavLink to={ROUTES.CONTACTS}>Contacts</NavLink>
           </li>
+          <li>
+            <NavLink to={ROUTES.USERS}>Users</NavLink>
+          </li>
         </ul>
       </nav>
     </header>
