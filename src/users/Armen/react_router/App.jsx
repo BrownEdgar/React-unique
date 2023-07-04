@@ -7,7 +7,7 @@ import Contact from './Pages/Contact'
 import ErrorPage from './Pages/ErrorPage'
 import Layouts from './components/Layouts'
 import ROUTES from './routes/routes'
-import {Route, RouterProvider,createRoutesFromElements, createBrowserRouter} from "react-router-dom"
+import { Route, RouterProvider, createRoutesFromElements, createBrowserRouter } from "react-router-dom"
 
 import './App.scss'
 
@@ -22,47 +22,44 @@ import './App.scss'
 //     )
 // )
 const router = createBrowserRouter([
-    {
-        path: ROUTES.HOME,
-        element: <Layouts />,
-        children: [
-            {
-            index: true,  
-            element: <Home />,
-            },
-            {
-            path: ROUTES.BLOG,
-            element: <Blog />,
-            },
-            {
-            path: ROUTES.ABOUT,
-            element: <About />,
-            },
-            {
-            path: ROUTES.PRODUCTS,
-            element: <Products />,
-            },
-            {
-                path: ROUTES.CONTACT,
-                element: <Contact />,
-            },
-            {
-            path: ROUTES.ERRORPAGE,
-            element: <ErrorPage />,
-            },
-        ]
-           
-        }
+	{
+		path: ROUTES.HOME,
+		element: <Layouts />,
+		children: [
+			{
+				index: true,
+				element: <Home />,
+			},
+			{
+				path: ROUTES.BLOG,
+				element: <Blog />,
+			},
+			{
+				path: ROUTES.ABOUT,
+				element: <About />,
+			},
+			{
+				path: ROUTES.PRODUCTS,
+				element: <Products />,
+			},
+			{
+				path: ROUTES.CONTACT,
+				element: <Contact />,
+			},
+			{
+				path: ROUTES.ERRORPAGE,
+				element: <ErrorPage />,
+			},
+		]
 
-   
-    
+	}
 ])
 export default function App() {
-  return (
-    <div className='App'>
-       
-        <RouterProvider router={router}/>
+	return (
+		<div className='App'>
 
-    </div>
-  )
+			<RouterProvider router={router} />
+
+		</div>
+	)
 }
