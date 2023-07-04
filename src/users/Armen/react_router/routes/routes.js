@@ -4,8 +4,7 @@ const ROUTES = {
     ABOUT: 'about',
     CONTACT: 'contact',
     PRODUCTS: 'products',
-    TODOS: 'todos',
-    TODO: 'todos/:id',
+    PRODUCT: 'products/:id',
     ERRORPAGE: '*',
 
 }
