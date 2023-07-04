@@ -21,9 +21,9 @@ export default function App() {
         <Route index element={<Home />} />
         <Route path={ROUTES.BLOG} element={<Blog />} />
         <Route path={ROUTES.ABOUT} element={<About />} />
-        <Route path={ROUTES.ERRORPAGE} element={<ErrorPage />} />
         <Route path={ROUTES.GALLERY} element={<Gallery />} />
         <Route path={ROUTES.CONTACTS} element={<Contacts />} />
+        <Route path={ROUTES.ERRORPAGE} element={<ErrorPage />} />
       </Route>
     )
   )

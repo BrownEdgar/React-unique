@@ -7,7 +7,7 @@ import Contact from './Pages/Contact'
 import ErrorPage from './Pages/ErrorPage'
 import Layouts from './components/Layouts'
 import ROUTES from './routes/routes'
-import {Route, RouterProvider,createRoutesFromElements, createBrowserRouter} from "react-router-dom"
+import { Route, RouterProvider, createRoutesFromElements, createBrowserRouter } from "react-router-dom"
 
 import './App.scss'
 import Todos from './Pages/Todos'
@@ -63,15 +63,14 @@ const router = createBrowserRouter([
            
         }
 
-   
-    
+	}
 ])
 export default function App() {
-  return (
-    <div className='App'>
-       
-        <RouterProvider router={router}/>
+	return (
+		<div className='App'>
 
-    </div>
-  )
+			<RouterProvider router={router} />
+
+		</div>
+	)
 }
