@@ -1,15 +1,12 @@
-import React from 'react'
 import Component from './Component'
 import classNames from 'classnames'
 
 export default function App() {
-  const btntype = (elem) => {
-    return(
-      <button className={classNames(`type-${elem.type}`)}></button>
-     
-    )
-   
-  }
+	const btntype = (elem) => {
+		return (
+			<button className={classNames(`type-${elem.type}`)}></button>
+		)
+	}
 
   return (
     <div>

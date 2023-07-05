@@ -1,0 +1,31 @@
+header {
+	width: 100%;
+	height: 80px;
+	background-color: #323232;
+	padding: 1em;
+	display: flex;
+	align-items: center;
+	justify-content: end;
+	color: beige;
+	nav {
+		height: 100%;
+		width: 40%;
+		ul {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			width: 100%;
+			height: 100%;
+			li {
+				font-size: 20px;
+				padding: 3px 6px;
+				a {
+					&.active_link {
+						border-bottom: 2px solid royalblue;
+						color: rgb(14, 191, 255);
+					}
+				}
+			}
+		}
+	}
+}
