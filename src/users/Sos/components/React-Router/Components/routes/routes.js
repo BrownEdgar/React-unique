@@ -3,7 +3,8 @@ HOME:'/',
 BLOG:'blog',
 ABOUT:'about',
 POSTS:'posts',
-HISTORY:'history',
+CARTS:'carts',
+CART:'carts/:id',
 ERRORPAGE:'*'
 }
 export default ROUTES;
