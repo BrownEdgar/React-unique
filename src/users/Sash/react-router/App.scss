@@ -34,16 +34,16 @@
 .card {
     display: flex;
     justify-content: center;
+    margin: 20px auto;
+    box-shadow: 0 0 5px 2px black;
     align-items: center;
-    width: 800px;
+    width: 35%;
     text-align: center;
 }
 
 .card-text {
-    border: 1px solid black;
     width: 400px;
-    line-height: 28px;
-
+    line-height: 29px;
 }
 
 .card-text p {
@@ -65,7 +65,6 @@
 }
 
 .card-image img {
-    width: 100%;
     display: flex;
 }
 
