@@ -35,7 +35,7 @@ export default function Product() {
       <div className="product-wrapper">
         <div className="product-carousel">
           {product.images && (
-            <Carousel>
+						<Carousel autoPlay={true} showArrow={false} axis={'horizontal'} dynamicHeight={true} >
               {product.images.map((image, index) => (
                 <div key={index}>
                   <img src={image} alt={`Product Image ${index + 1}`} />

@@ -22,7 +22,7 @@ export default function Todo() {
 		return <h1>Invalid todo id of post not found</h1>
 	}
 
-	const goback = () => {  
+	const goback = () => { 
 		navigate(`/${ROUTES.TODOS}`)
 	}
 	return (
