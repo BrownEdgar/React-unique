@@ -1,65 +1,67 @@
 import Navbar from './components/Navbar/Navbar'
-import Home from './Pages/Home'
-import Blog from './Pages/Blog'
-import About from './Pages/About'
-import Products from './Pages/Products'
-import Contact from './Pages/Contact'
-import ErrorPage from './Pages/ErrorPage'
+import Home from './pages/Home'
+import Blog from './pages/Blog'
+import About from './pages/About'
+import { RouterProvider, createBrowserRouter } from "react-router-dom"
+import ErrorPage from './pages/ErrorPage'
 import Layouts from './components/Layouts'
 import ROUTES from './routes/routes'
-import { Route, RouterProvider, createRoutesFromElements, createBrowserRouter } from "react-router-dom"
-
 import './App.scss'
+import Products from './Pages/Products'
+import Product from './Pages/Product'
+import postLoader from './loader/postLoader'
 
-// const router = createBrowserRouter(
-//     createRoutesFromElements(
-//         <Route path='/' element={<Layouts />}>
-//             <Route  index element={<Home />}/>
-//             <Route path='blog' element={<Blog />}/>
-//             <Route path='about' element={<About />}/>
-//             <Route path='*' element={<ErrorPage />}/>
-//         </Route>
-//     )
-// )
-const router = createBrowserRouter([
-	{
-		path: ROUTES.HOME,
-		element: <Layouts />,
-		children: [
-			{
-				index: true,
-				element: <Home />,
-			},
-			{
-				path: ROUTES.BLOG,
-				element: <Blog />,
-			},
-			{
-				path: ROUTES.ABOUT,
-				element: <About />,
-			},
-			{
-				path: ROUTES.PRODUCTS,
-				element: <Products />,
-			},
-			{
-				path: ROUTES.CONTACT,
-				element: <Contact />,
-			},
-			{
-				path: ROUTES.ERRORPAGE,
-				element: <ErrorPage />,
-			},
-		]
 
-	}
-])
+
+
+
 export default function App() {
+	// const router = createBrowserRouter(
+	// 	createRoutesFromElements(
+	// 		<Route path='/' element={<Layouts />}>
+	// 			<Route index element={<Home title ="my first react router component is here"/>} />
+	// 			<Route path='blog' element={<Blog />} />
+	// 			<Route path='about' element={<About />} />
+	// 			<Route path='*' element={<ErrorPage />} />
+	// 		</Route>
+	// 	)
+	// )
+	const router = createBrowserRouter([
+		{
+			path: ROUTES.HOME,
+			element: <Layouts />,
+			children: [
+				{
+					index: true,
+					element: <Home title="my first react router component is here" />,
+				},
+				{
+					path: ROUTES.BLOG,
+					element: <Blog />,
+				},
+				{
+					path: ROUTES.ABOUT,
+					element: <About />,
+				},
+				{
+					path: ROUTES.PRODUCTS,
+					element: <Products />,
+					loader: postLoader
+				},
+				{
+					path: ROUTES.PRODUCT,
+					element: <Product />,
+				},
+				{
+					path: ROUTES.ERRORPAGE,
+					element: <ErrorPage />,
+				}
+			]
+		}
+	])
 	return (
 		<div className='App'>
-
 			<RouterProvider router={router} />
-
 		</div>
 	)
 }

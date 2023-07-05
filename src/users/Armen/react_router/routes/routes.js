@@ -4,6 +4,7 @@ const ROUTES = {
     ABOUT: 'about',
     CONTACT: 'contact',
     PRODUCTS: 'products',
+    PRODUCT: 'products/:id',
     ERRORPAGE: '*',
 
 }
