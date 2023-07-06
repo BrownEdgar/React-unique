@@ -1,16 +1,16 @@
-import Navbar from './components/Navbar/Navbar'
+
+import { RouterProvider, createBrowserRouter } from "react-router-dom"
 import Home from './pages/Home'
 import Blog from './pages/Blog'
 import About from './pages/About'
-import { RouterProvider, createBrowserRouter } from "react-router-dom"
+import Products from './Pages/Products'
+import Product from './Pages/Product'
 import ErrorPage from './pages/ErrorPage'
 import Layouts from './components/Layouts'
 import ROUTES from './routes/routes'
-import './App.scss'
-import Products from './Pages/Products'
-import Product from './Pages/Product'
 import postLoader from './loader/postLoader'
 
+import './App.scss'
 
 
 
