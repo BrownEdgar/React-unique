@@ -1,5 +1,6 @@
 
 import { RouterProvider, createBrowserRouter } from "react-router-dom"
+
 import Home from './pages/Home'
 import Blog from './pages/Blog'
 import About from './pages/About'
@@ -10,22 +11,16 @@ import Layouts from './components/Layouts'
 import ROUTES from './routes/routes'
 import postLoader from './loader/postLoader'
 
+
+
 import './App.scss'
+import PrivateRouter from './components/PrivateRouter';
 
 
 
 
 export default function App() {
-	// const router = createBrowserRouter(
-	// 	createRoutesFromElements(
-	// 		<Route path='/' element={<Layouts />}>
-	// 			<Route index element={<Home title ="my first react router component is here"/>} />
-	// 			<Route path='blog' element={<Blog />} />
-	// 			<Route path='about' element={<About />} />
-	// 			<Route path='*' element={<ErrorPage />} />
-	// 		</Route>
-	// 	)
-	// )
+
 	const router = createBrowserRouter([
 		{
 			path: ROUTES.HOME,
@@ -43,15 +38,22 @@ export default function App() {
 					path: ROUTES.ABOUT,
 					element: <About />,
 				},
-				{
-					path: ROUTES.PRODUCTS,
-					element: <Products />,
-					loader: postLoader
-				},
-				{
-					path: ROUTES.PRODUCT,
-					element: <Product />,
-				},
+					{
+						path: ROUTES.PRODUCTS,
+						element: <PrivateRouter />,
+						children: [
+							{
+								index: true,
+								element: <Products />,
+								loader: postLoader
+							},
+							{
+								path: ROUTES.PRODUCT,
+								element: <Product />,
+							},
+						]
+					},
+			
 				{
 					path: ROUTES.ERRORPAGE,
 					element: <ErrorPage />,
