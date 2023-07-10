@@ -1,0 +1,60 @@
+.App {
+    max-width: 1140px;
+    margin: 0 auto;
+    .title {
+        margin-top: 50px;
+        width: 156px;
+        height: 54px;
+        top: 160px;
+        left: 235px
+
+    }
+    
+    h1 {
+        width: 156px;
+        height: 54px;
+        top: 160px;
+        left: 235px;
+        color: rgba(33, 36, 61, 1);
+
+        
+    }
+    .blog__content{
+        width: 682px;
+        margin-bottom: 25px;
+        border-bottom: 1px solid rgba(224, 224, 224, 1);
+        h2 {
+            font-family: Heebo;
+            font-size: 30px;
+            font-weight: 500;
+            line-height: 44px;
+            letter-spacing: 0px;
+            text-align: left;
+
+        }
+        h4 {
+            font-family: Heebo;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 29px;
+            letter-spacing: 0px;
+            text-align: left;
+            color: rgba(33, 36, 61, 1);
+            span{
+                color: rgba(134, 149, 164, 1);
+                cursor: pointer;
+            }
+
+        }
+        p{
+            font-family: Heebo;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            letter-spacing: 0px;
+            text-align: left;
+            margin-bottom: 15px;
+
+        }
+    }
+}
