@@ -1,4 +1,4 @@
-import  { useState,createContext } from 'react';
+import { useState, createContext } from 'react';
 import Blogs from './Blogs'
 
 
@@ -11,54 +11,51 @@ export default function App() {
 		day: 'numeric',
 		month: 'short',
 		year: 'numeric'
-	  }); 
-	  
+	});
+
 	const [data, setData] = useState([
 		{
-			id:1,
+			id: 1,
 			title: 'UI Interactions of the week',
-            date: currentDate,
-            link1: 'Express',
-            link2: 'Handlebars',
-			description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.'
-		},
-		{
-			id:2,
-			title: 'UI Interactions of the week',
-            date: currentDate,
-            link1: 'Express',
-            link2: 'Handlebars',
-			description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.'
-		},
-		{
-			id:3,
-			title: 'UI Interactions of the week',
-            date: '12 Feb 2019',
-            link1: 'Express',
-            link2: 'Handlebars',
-			description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.'
-		},
-		{
-			id:4,
-			title: 'UI Interactions of the week',
-            date: '12 Feb 2019',
-            link1: 'Express',
-            link2: 'Handlebars',
-			description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.'
-		},
+			date: currentDate,
+			categories: ['Express','Handlebars'],
 		
+			description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.'
+		},
+		{
+			id: 2,
+			title: 'UI Interactions of the week',
+			date: currentDate,
+			categories: ['Express', 'Handlebars'],
+			description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.'
+		},
+		{
+			id: 3,
+			title: 'UI Interactions of the week',
+			date: '12 Feb 2019',
+			categories: ['Express', 'Handlebars', "JS"],
+			description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.'
+		},
+		{
+			id: 4,
+			title: 'UI Interactions of the week',
+			date: '12 Feb 2019',
+			categories: ['Express', 'Handlebars'],
+			description: 'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.'
+		},
+
 	])
-	
+
 	return (
 		<div className='App'>
-            <div className='title'>
-            <h1>Blog</h1>
-            </div>
-            
+			<div className='title'>
+				<h1>Blog</h1>
+			</div>
+
 			<MyContext.Provider value={data}>
 				<Blogs />
 			</MyContext.Provider>
-			
+
 		</div>
 	)
 }

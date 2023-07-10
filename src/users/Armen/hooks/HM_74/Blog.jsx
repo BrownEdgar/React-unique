@@ -4,7 +4,7 @@ export default function Item({item}) {
          
           <div className="blog__content">
               <h2>{item.title}</h2>
-              <h4>{item.date} | <span>{item.link1}, {item.link2}</span></h4>
+					<h4>{item.date} | <span>{item.categories.join(', ')}</span></h4>
               <p>{item.description}</p>
             </div>
           
