@@ -4,12 +4,12 @@ import Item from './Item'
 
 
 export default function Blog() {
-  const blog = useContext(MyContext)
+  const blogs = useContext(MyContext)
   return (
     <div className='container'>
       <h1>Blog</h1>
       {
-        blog.map(elem => <Item key={elem.id} item={elem}/>)
+        blogs.map(elem => <Item key={elem.id} item={elem}/>)
       }
     </div>
   )

@@ -1,0 +1,37 @@
+.container{
+	width: 90%;
+	margin: 50px auto;
+	form {
+		width: 40%;
+		margin: 0 auto;
+		input {
+			padding: 1em;
+			border: 1px solid grey;
+			border-radius: 8px;
+			width: 100%;
+			font-size: 18px;
+		}
+	}
+}
+
+.Photos{
+	display: flex;
+	gap: 20px;
+	align-items: center;
+	align-content: start;
+	flex-wrap: wrap;
+	div{
+		flex-basis: 20%;
+		margin: 12px;
+		img {
+			width: 100%;
+			max-height: 200px;
+		}
+		h2 {
+			text-overflow:ellipsis;
+			white-space: nowrap;
+			width: 300px;
+			overflow: hidden;
+		}
+	}
+}
