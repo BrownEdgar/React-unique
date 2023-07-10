@@ -1,15 +1,16 @@
-import Navbar from './components/Navbar/Navbar'
+
+import { RouterProvider, createBrowserRouter } from "react-router-dom"
 import Home from './pages/Home'
 import Blog from './pages/Blog'
 import About from './pages/About'
-import { Route, RouterProvider, createBrowserRouter } from "react-router-dom"
 import ErrorPage from './pages/ErrorPage'
 import Layouts from './components/Layouts'
 import ROUTES from './routes/routes'
-import './App.scss'
 import Todos from './pages/Todos'
 import Todo from './pages/Todo'
 import postLoader from './loaders/postLoader'
+import PrivateRouter from './components/PrivateRouter'
+import './App.scss'
 
 
 
@@ -44,13 +45,19 @@ export default function App() {
 					element: <About />,
 				},
 				{
-					path: ROUTES.TODOS,
-					element: <Todos />,
-					loader: postLoader
-				},
-				{
-					path: ROUTES.TODO,
-					element: <Todo />,
+					path: ROUTES.TODOS, 
+					element: <PrivateRouter />,
+					children: [
+						{
+							index: true,
+							element: <Todos />,
+							loader: postLoader
+						},
+						{
+							path: ROUTES.TODO, 
+							element: <Todo />,
+						},
+					]
 				},
 				{
 					path: ROUTES.ERRORPAGE,

@@ -3,7 +3,7 @@ const ROUTES = {
 	BLOG: 'blog',
 	ABOUT: 'about',
 	TODOS: 'todos',
-	TODO: 'todos/:id',
+	TODO: ':id',
 	ERRORPAGE: '*',
 }
 export default ROUTES;
