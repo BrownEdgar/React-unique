@@ -1,0 +1,31 @@
+.container {
+    width: 90%;
+    margin: 50px auto;
+  
+    form {
+      margin: 0 auto;
+  
+      input {
+        padding: 1em;
+        border: 1px solid gray;
+        border-radius: 8px;
+        width: 100%;
+        font-size: 18px;
+      }
+    }
+  }
+  
+  .product-card {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    align-content: start;
+    flex-wrap: wrap;
+  
+    div {
+      flex-basis: 20%;
+      margin: 12px;
+      width: 100%;
+    }
+  }
+  

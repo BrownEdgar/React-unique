@@ -14,7 +14,7 @@ export default function Text({text}) {
         <br />
         <br />
       </div>
-      <span className='line'>{text.line}</span>
+      <hr />
       <br />
       <br />
       <div className='icons'>

@@ -34,8 +34,7 @@ export default function App() {
         },200);
         setCurrentTimoutId(() => outTime)
     };
-
-
+    
   return (
     <div className='contanier'>
         <h3>{value}</h3>

@@ -7,10 +7,14 @@ export default function Products({data}) {
             data.map(product => {
                 return(
                     <div key={product.id}>
-                        <img src={product.url} alt={product.title} />
-                        <hr />
-                        <h2>{product.title}</h2>
-                        <p>{product.price}</p>
+                        <h2>TITLE: {product.title}</h2>
+                        <p>DESCRIPTION: {product.description}</p>
+                        <p>PRICE: {product.price}</p>
+                        <p>DISCOUNT PERCENTAGE: {product.discountPercentage}</p>
+                        <p>RATING: {product.rating}</p>
+                        <p>STOCK: {product.stock}</p>
+                        <p>BRAND: {product.brand}</p>
+                        <p>CATEGORY: {product.category}</p>
                     </div>
                 )
             })
