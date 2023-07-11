@@ -21,7 +21,7 @@ export default function App() {
 
     useEffect(() => {
      axios.get('https://dummyjson.com/products')
-     .then(res => setData(res.data))
+     .then(res => setData(res.data.products))
     }, [])
 
 
