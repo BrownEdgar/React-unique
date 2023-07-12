@@ -1,54 +1,40 @@
-import React, { useState, useEffect, useTransition } from 'react';
-import axios from 'axios';
-import Products from './Products';
+import { useState, useEffect, useTransition } from 'react'
+import axios from 'axios'
+import Products from './Products'
+import "./App.scss"
 
-import './App.scss';
+const filteredData = (data, value) => {
+  return data.filter(elem => {
+    if (value.trim() === "" || value.trim().length < 2) return data
+    return elem.title.toLowerCase().includes(value.toLowerCase())
+  })
+}
 
 export default function App() {
-  const [data, setData] = useState([]);
-  const [value, setValue] = useState('');
-  const [isPending, startTransition] = useTransition();
-  const [currentTimeOutId, setcurrentTimeOutId] = useState(null);
+  const [data, setData] = useState([])
+  const [value, setValue] = useState("")
+  const [currentTimeOutId, setcurrentTimeOutId] = useState(null)
+  const [isPending, startTransition] = useTransition()
 
   useEffect(() => {
-    axios.get('https://dummyjson.com/products?_limit=30').then(res => {
-      console.log(res.data); // Log fetched data to check its structure
-      setData(res.data);
-    });
-  }, []);
+    axios.get("https://dummyjson.com/products?_limit=30")
+      .then(res => setData(res.data.products))
+  }, [])
 
   const handleChange = (e) => {
-    if (currentTimeOutId) {
-      clearTimeout(currentTimeOutId);
-    }
-    const timeoutId = setTimeout(() => {
-      startTransition(() => setValue(e.target.value));
+    const t = setTimeout(() => {
+      startTransition(() => setValue(e.target.value))
     }, 200);
-    setcurrentTimeOutId(timeoutId);
-  };
-
-  useEffect(() => {
-    console.log(data); // Log data to check its type
-  }, [data]);
-
-  const filteredData = data.filter(elem => {
-    if (value.trim() === '' || value.trim().length < 2) {
-      return true;
-    }
-    return elem.title.toLowerCase().includes(value.toLowerCase());
-  });
+    setcurrentTimeOutId(t)
+  }
 
   return (
     <div className='container'>
-      <form action=''>
-        <input
-          type='search'
-          name='searchTitle'
-          id='searchTitle'
-          onChange={handleChange}
-        />
+      <form>
+        <input type="search" name='productsSearch' id='productsSearch' onChange={handleChange} />
       </form>
-      <Products data={filteredData} />
+      {isPending ? <h1>Loading...</h1> : <Products data={filteredData(data, value)} />}
+
     </div>
-  );
+  )
 }
