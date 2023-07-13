@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client'
-import App from "./users/Armen/HM_75/App"
+import App from "./Slick-Slider/App"
 import './index.css'
 ReactDOM.createRoot(document.getElementById('root')).render(<App />)
 
