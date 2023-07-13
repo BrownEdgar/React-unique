@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client'
-import App from "./users/Sos/components/hooks/useTransition/App"
+import App from "./Slider/App"
 import './index.css'
 ReactDOM.createRoot(document.getElementById('root')).render(<App />)
 
