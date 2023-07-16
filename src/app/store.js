@@ -9,6 +9,6 @@ import counterSlice from "../features/counter/counterSlice";
 export default configureStore({
   reducer: {
     users:usersReducer,
-    counter:counterSlice
+    counter:usersReducer,
   },
 })
