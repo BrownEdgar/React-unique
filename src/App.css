@@ -1,58 +1,50 @@
-
-
-body {
-	background: #2d2d2d;
-	color: beige;
+.container {
+  text-align: center;
 }
 
-.App {
-	width: 80%;
-	margin: 20px auto;
+.app {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 90%;
+  margin: 20px auto;
 }
 
-.slick-slide {
-	height: 100%;
-
+.card {
+  width: 22%;
+  background-color: antiquewhite;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0 0 5px 0 black;
 }
 
-.slick-slide div {
-	padding: 20px;
-	display: flex;
-	justify-content: space-between;
-	overflow-y: hidden;
-	flex-direction: column;
-
+h2 {
+  font-size: 20px;
 }
 
-.slick-slide {
-
-
+p {
+  text-align: end;
+  font-size: 25px;
+  font-weight: 900;
+  color: rgba(4, 49, 78, 0.411);
 }
 
-img {
-	width: 100%;
-	max-width: none;
-	object-fit: cover;
-	height: 400px;
-	margin-top: 20px;
-
+button {
+  background-color: rgb(0, 53, 88);
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-radius: 15px;
+  color: whitesmoke;
+  letter-spacing: 1px;
+  transition: 0.3s;
+  font-weight: 700;
+  margin: 0 10px;
 }
 
-.slick-center img {
-	outline: 3px solid #27ae60;
-	outline-offset: 10px;
-	scale: 1.03;
-	transition: 0.3s;
-	border-radius: 10px;
-
-}
-
-.slick-dots li button:before {
-	content: '⭕' !important;
-	width: 40px !important;
-	height: 40px !important;
-	font-size: 30px;
-}
-.slick-dots li  {
-	padding: 0 20px;
+button:hover {
+  background-color: whitesmoke;
+  color: rgb(0, 53, 88);
+  border: 1px solid rgb(0, 53, 88);
 }

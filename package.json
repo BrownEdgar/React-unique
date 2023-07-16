@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@reduxjs/toolkit": "^1.9.5",
     "axios": "^1.4.0",
     "classnames": "^2.3.2",
     "dom": "^0.0.3",
@@ -19,9 +20,11 @@
     "react-content-loader": "^6.2.1",
     "react-dom": "^18.2.0",
     "react-icons": "^4.9.0",
+    "react-redux": "^8.1.1",
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.14.1",
     "react-slick": "^0.29.0",
+    "redux": "^4.2.1",
     "sass": "^1.63.4",
     "slick-carousel": "^1.8.1",
     "yup": "^1.2.0"
