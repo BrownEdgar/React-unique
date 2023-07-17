@@ -1,47 +1,38 @@
-import { useState } from "react"
-import Test from "./components/Test"
+import { useDispatch, useSelector } from 'react-redux'
+import { addTodo, clear } from './features/todos/todosSlice'
 
-import './App.css'
-import Users from "./components/Users"
-
-function App() {
-
-	const [menuList, setMenuList] = useState([
-		"Home",
-		'About',
-		'Blog',
-		'Gallary',
-		'Contact',
-	])
-	const [color, setColor] = useState('#222')
-	const [isShow, setIsShow] = useState(true)
-
-
-	const handleChange = () => {
-		setMenuList(menuList.with(3, "Delivery"));
-		setColor('royalblue')
-	}
-
-	const deleteLastElement = () => {
-		// if (menuList.length > 1) {
-		// 	setMenuList(menuList.slice(0, -1))
-		// }else{
-		// 	setMenuList([])
-		// }
-
-		const copy = [...menuList];
-		copy.pop()
-		setMenuList(copy)
-	}
-	return (
-		<div style={{
-			backgroundColor: color,
-			padding: '16px'
-		}}>
-			<Users  limit={2}/>
-			<button>ok</button>
-		</div>
-	)
+import "./App.css"
+export default function App() {
+    const todos = useSelector(state => state.todos)
+    const dispatch = useDispatch()
+    const handleClick = () => {
+        const todo = {
+            "userId": 2,
+            "id": new Date().getTime(),
+            "title": "totam atque quo nesciunt",
+            "completed": true
+        }
+        dispatch(addTodo(todo))
+    }
+    const clearAll = () => {
+        dispatch(clear(todos))
+    }
+    return (
+        <div className='container'>
+            <div className='app'>
+                {
+                    todos.map(elem => {
+                        return (
+                            <div key={elem.id} className='card'>
+                                <h2>{elem.title}</h2>
+                                <p>{elem.userId}</p>
+                            </div>
+                        )
+                    })
+                }
+            </div>
+            <button onClick={handleClick}>Add Todo</button>
+            <button onClick={clearAll}>Clear all</button>
+        </div>
+    )
 }
-
-export default App
