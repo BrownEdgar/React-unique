@@ -6,7 +6,7 @@ export default function App() {
   const users =  useSelector(state => state.users)
   const counter = useSelector(state => state.counter)
   const dispatch = useDispatch()
-  const handleCklik = () => {
+  const handleClick = () => {
     const user = {
         id:new Date().getTime(),
         nume:"redux"
@@ -21,7 +21,8 @@ export default function App() {
                 JSON.stringify(users,null,1)
             }
         </pre>
-        <button onClick={handleCklik}>add user</button>
+        <button onClick={handleClick}>add user</button>
+        <h2>Counter:{counter}</h2>
     </div>
   )
 }
