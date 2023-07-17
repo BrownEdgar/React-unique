@@ -14,7 +14,7 @@ const todosSlice = createSlice({
       state.push(action.payload);
     },
     clearTodos: (state) => {
-      state.splice(0, state.length);
+      state.length = 0;
     },
   },
   extraReducers: (builder) => {
@@ -24,5 +24,5 @@ const todosSlice = createSlice({
   },
 });
 
-export default todosSlice.reducer;
 export const { addTodo, clearTodos } = todosSlice.actions;
+export default todosSlice.reducer;
