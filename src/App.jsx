@@ -1,28 +1,24 @@
-import { useSelector, useDispatch } from "react-redux"
-import {addUser} from './feauchers/user/usersSlice';
-import Counter from './feauchers/counter/Counter';
-
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { addTodos, allTodosSelector } from "./features/todos/todosSlice";
 
 export default function App() {
-  const users = useSelector(state => state.users);
+  const todos = useSelector(allTodosSelector);
   const dispatch = useDispatch();
-  const handleClick = () => {
-    const user = {
-      id: new Date().getTime(),
-      name: "Redux"
-    }
-    dispatch(addUser(user))
-  }
+
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/todos')
+      .then(res => res.json())
+      .then(data => dispatch(addTodos(data)));
+  }, []);
+
   return (
-	<div>
-    <h1>HELLO REDUX</h1>
-    <pre>
-      {
-        JSON.stringify(users,null,1)
-      }
-    </pre>
-    <button onClick ={handleClick}>ADD USER</button>
-    <Counter />
-  </div>
-  )
+    <div>
+      {todos.map(elem => (
+        <div key={elem.id}>
+          <h2>{elem.title}</h2>
+        </div>
+      ))}
+    </div>
+  );
 }
