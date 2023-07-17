@@ -1,30 +1,34 @@
-import { useSelector, useDispatch} from 'react-redux';
-import { addUser } from './features/users/usersSlice';
-import Counter from './features/counter/Counter';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { addTodos, getTodos, setFilter } from './features/todos/todosSlice';
 
-
+import './App.css';
 
 export default function App() {
-	const users = useSelector(state => state.users);
+	const todos = useSelector(getTodos);
 	const dispatch = useDispatch();
 
-	const handleClick = () => { 
-		const user = {
-			id: new Date().getTime(),
-			name: "Redux"
-		} 
-		dispatch(addUser(user))
-	}
+	useEffect(() => {
+		fetch('https://jsonplaceholder.typicode.com/todos?_limit=12')
+			.then(res => res.json())
+			.then(data => dispatch(addTodos(data)))
+	}, [])
+
 	return (
-		<div>
-			<h1>Hello redux</h1>
-			<pre>
-				{
-					JSON.stringify(users,null,1)
-				}
-			</pre>
-			<button onClick={handleClick}>add user</button>
-			<Counter />
-		</div>
+		<>
+			<button onClick={() => dispatch(setFilter('all'))}>add count</button>
+			<button onClick={() => dispatch(setFilter('allCompleted'))}>add count</button>
+			<button onClick={() => dispatch(setFilter('allUnCompleted'))}>add count</button>
+			<div className='container'>
+
+				{todos.map(elem => {
+					return (
+						<div key={elem.id}>
+							<h2>{elem.title}</h2>
+						</div>
+					)
+				})}
+			</div>
+		</>
 	)
 }
