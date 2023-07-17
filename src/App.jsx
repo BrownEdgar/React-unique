@@ -1,47 +1,28 @@
-import { useState } from "react"
-import Test from "./components/Test"
-
-import './App.css'
-import Users from "./components/Users"
-
-function App() {
-
-	const [menuList, setMenuList] = useState([
-		"Home",
-		'About',
-		'Blog',
-		'Gallary',
-		'Contact',
-	])
-	const [color, setColor] = useState('#222')
-	const [isShow, setIsShow] = useState(true)
+import { useSelector, useDispatch } from "react-redux"
+import {addUser} from './feauchers/user/usersSlice';
+import Counter from './feauchers/counter/Counter';
 
 
-	const handleChange = () => {
-		setMenuList(menuList.with(3, "Delivery"));
-		setColor('royalblue')
-	}
-
-	const deleteLastElement = () => {
-		// if (menuList.length > 1) {
-		// 	setMenuList(menuList.slice(0, -1))
-		// }else{
-		// 	setMenuList([])
-		// }
-
-		const copy = [...menuList];
-		copy.pop()
-		setMenuList(copy)
-	}
-	return (
-		<div style={{
-			backgroundColor: color,
-			padding: '16px'
-		}}>
-			<Users  limit={2}/>
-			<button>ok</button>
-		</div>
-	)
+export default function App() {
+  const users = useSelector(state => state.users);
+  const dispatch = useDispatch();
+  const handleClick = () => {
+    const user = {
+      id: new Date().getTime(),
+      name: "Redux"
+    }
+    dispatch(addUser(user))
+  }
+  return (
+	<div>
+    <h1>HELLO REDUX</h1>
+    <pre>
+      {
+        JSON.stringify(users,null,1)
+      }
+    </pre>
+    <button onClick ={handleClick}>ADD USER</button>
+    <Counter />
+  </div>
+  )
 }
-
-export default App
