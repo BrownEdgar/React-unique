@@ -1,40 +1,44 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-.section{
-	background-color: purple;
-}
-
-body {
-  background: #2d2d2d;
-  color: beige;
-}
-
 .container {
   width: 90%;
   margin: 20px auto;
   display: flex;
   justify-content: space-around;
-  align-items: center;
-  padding: 1em;
-  gap: 20px;
+  align-items: flex-start;
   flex-wrap: wrap;
 }
 
-.container>div {
+.container > div {
   flex-basis: 40%;
-  flex-grow: 1;
   padding: 20px;
-  height: 80px;
   border-radius: 8px;
-  background-image: linear-gradient(180deg, #2194c1 49%, #0b4a63 49%);
-  
+  background-color: wheat;
+  box-shadow: 4px 8px 8px rgba(166, 9, 9, 0.986);
+  margin-top: 60px;
+  margin-bottom: 20px;
+  height: 250px;
 }
 
-.container>div> h2 {
-  position: relative;
-  bottom: 6px;
+.container > div > h1 {
+  margin-bottom: 10px;
+  color: red;
+}
+.container > div > h2 {
+  margin-bottom: 10px;
+}
+.container > div > p {
+  margin-bottom: 10px;
+}
+
+select {
+  margin-bottom: 20px;
+  padding: 0 20px;
+  position: absolute;
+  font-size: 16px;
+  height: 40px;
+  border-radius: 4px;
+  box-shadow: 4px 8px 8px rgba(166, 9, 9, 0.986);
+  border: 1px solid wheat;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
 }

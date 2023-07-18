@@ -1,34 +1,43 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addTodos, getTodos, setFilter } from './features/todos/todosSlice';
+import { addComments, getComments } from './feauchers/comments/commentsSlice';
 
 import './App.css';
 
 export default function App() {
-    const todos = useSelector(getTodos);
-    const dispatch = useDispatch();
+  const allComments = useSelector(getComments);
+  const dispatch = useDispatch();
+  const [selectedQuantity, setSelectedQuantity] = useState(1);
 
-    useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/todos?_limit=12')
-            .then(res => res.json())
-            .then(data => dispatch(addTodos(data)))
-    }, [])
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/comments')
+      .then(res => res.json())
+      .then(data => dispatch(addComments(data)));
+  }, []);
 
-    return (
-        <>
-            <button onClick={() => dispatch(setFilter('all'))}>add count</button>
-            <button onClick={() => dispatch(setFilter('allCompleted'))}>add count</button>
-            <button onClick={() => dispatch(setFilter('allUnCompleted'))}>add count</button>
-            <div className='container'>
+  const handleQuantityChange = (e) => {
+    setSelectedQuantity(Number(e.target.value));
+  };
 
-                {todos.map(elem => {
-                    return (
-                        <div key={elem.id}>
-                            <h2>{elem.title}</h2>
-                        </div>
-                    )
-                })}
-            </div>
-        </>
-    )
+  const displayedComments = allComments.slice(0, selectedQuantity);
+
+  return (
+    <div className='container'>
+      <select value={selectedQuantity} onChange={handleQuantityChange}>
+        {allComments.map((_, index) => (
+          <option key={index + 1} value={index + 1}>
+            {index + 1}
+          </option>
+        ))}
+      </select>
+      {displayedComments.map(comment => (
+        <div key={comment.id} className='comment'>
+          <h1>{comment.id}</h1>
+          <h2><strong>Name:</strong> {comment.name}</h2>
+          <p><strong>Email:</strong> {comment.email}</p>
+          <p><strong>Body:</strong> {comment.body}</p>
+        </div>
+      ))}
+    </div>
+  );
 }
