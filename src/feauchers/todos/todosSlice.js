@@ -1,21 +1,42 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createSelector } from '@reduxjs/toolkit'
 
-const initialTodosValue = [];
+const initialTodosValue = {
+    data: [],
+    filter: 'allCompleted'
+}
 
-const todosSlice = createSlice({
-  name: 'todos',
-  initialState: initialTodosValue,
-  reducers: {
-    addTodos: (state, action) => {
-      state.push(action.payload);
-    },
-  },
-});
+const todoSlice = createSlice({
+    name: 'todos',
+    initialState: initialTodosValue,
+    reducers: {
+        addTodos: (_, action) => {
+            return {
+                data: action.payload,
+                filter: 'all'
+            }
+        },
+        setFilter:(state,{payload}) => {
+            state.filter = payload
+        }
+    }
+})
 
-export const allTodosSelector = (state) => state.todos;
-export const getAllCompletedTodosSelector = (state) => {
-  return state.todos.filter((todo) => todo.completed);
-};
+//selectors
+const allTodosSelector = state => state.todos.data
+const gitCurrentFilterSelector = state => state.todos.filter
 
-export default todosSlice.reducer;
-export const { addTodos } = todosSlice.actions;
+export const getTodos = createSelector(
+        [allTodosSelector, gitCurrentFilterSelector],
+    (allToodos,  filterName) => {
+
+        switch (filterName) {
+            case 'all': return allToodos;
+            case 'allCompleted': return allToodos.filter(todo => todo.completed);
+            case 'allUnCompleted': return allToodos.filter(todo => !todo.completed);
+            default: return allToodos
+        }
+    }
+)
+
+export default todoSlice.reducer;
+export const { addTodos, setFilter } = todoSlice.actions
