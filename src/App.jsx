@@ -7,7 +7,7 @@ import './App.css';
 export default function App() {
   const allComments = useSelector(getComments);
   const dispatch = useDispatch();
-  const [selectedQuantity, setSelectedQuantity] = useState(1);
+  const [selectedQuantity, setSelectedQuantity] = useState('all');
 
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/comments')
@@ -16,14 +16,20 @@ export default function App() {
   }, []);
 
   const handleQuantityChange = (e) => {
-    setSelectedQuantity(Number(e.target.value));
+    setSelectedQuantity(e.target.value);
   };
 
-  const displayedComments = allComments.slice(0, selectedQuantity);
+  let displayedComments = allComments;
+
+  if (selectedQuantity !== 'all') {
+    const selectedQuantityValue = parseInt(selectedQuantity);
+    displayedComments = allComments.slice(0, selectedQuantityValue);
+  }
 
   return (
     <div className='container'>
       <select value={selectedQuantity} onChange={handleQuantityChange}>
+        <option value="all">All</option>
         {allComments.map((_, index) => (
           <option key={index + 1} value={index + 1}>
             {index + 1}

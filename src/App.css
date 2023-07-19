@@ -41,4 +41,23 @@ select {
   background-color: #fff;
   color: #333;
   cursor: pointer;
+  caret-color: rgba(166, 9, 9, 0.986);
 }
+
+select option {
+  background-color:wheat;
+}
+
+select::-webkit-scrollbar {
+  width: 8px;
+}
+
+select::-webkit-scrollbar-track {
+  background-color:wheat;
+ }
+
+
+select::-webkit-scrollbar-thumb {
+  background-color: rgba(166, 9, 9, 0.986);
+}
+
