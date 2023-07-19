@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { addTodos, getTodos } from './features/todos/todosSlice'
 import { useEffect } from 'react'
-import { getComments,addComments } from './features/comments/commentsSlice';
+import { getComments,addComments, setFilter } from './features/comments/commentsSlice';
 import './App.scss'
 export default function App() {
 
@@ -16,10 +16,18 @@ export default function App() {
   },[])
     
   return (
-    <div>
+    <div className='head'>
+      <div className='selection'>
+      <button onClick={() => dispatch(setFilter('all'))}>All Comments
+      </button>
+      <button onClick={() => dispatch(setFilter('allCompleted'))}>All Completed
+      </button>
+      <button onClick={() => dispatch(setFilter('unCompleted'))}>Un Completed
+      </button>
+      </div>
        {comments.map(elem => {
         return(
-          <div key={elem.id} className='head'>
+          <div key={elem.id} >
             <div className='block'>
             <h2 className='postid'>{elem.id}</h2>
 			      <p className='name'><span>NAME </span>{elem.name}</p>
