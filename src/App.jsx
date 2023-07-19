@@ -2,8 +2,12 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addTodo, clear } from './features/todos/todosSlice'
 
 import "./App.css"
+import { useEffect } from 'react'
+import axios from 'axios'
+import { addComments } from './features/comments/commentsSlice'
 export default function App() {
 	const todos = useSelector(state => state.todos)
+	const comments = useSelector(state => state.comments)
 	const dispatch = useDispatch()
 	const handleClick = () => {
 		const todo = {
@@ -15,8 +19,13 @@ export default function App() {
 		dispatch(addTodo(todo))
 	}
 	const clearAll = () => {
-		dispatch(clear(todos))
+		dispatch(clear())
 	}
+	useEffect(() => {
+		axios.get(`https://jsonplaceholder.typicode.com/comments`)
+		.then(res => dispatch(addComments(res.data)))
+	}, [])
+	
 	return (
 		<div className='container'>
 			<div className='app'>
@@ -33,6 +42,19 @@ export default function App() {
 			</div>
 			<button onClick={handleClick}>Add Todo</button>
 			<button onClick={clearAll}>Clear all</button>
+			<div className='box'>
+			{
+				comments.map(elem => {
+					return(
+						<div key={elem.id} className='box-com'>
+							<h3>{elem.name}</h3>
+							<p>{elem.email}</p>
+							<p>{elem.body}</p>
+						</div>
+					)
+				})
+			}
+			</div>
 		</div>
 	)
 }

@@ -48,3 +48,28 @@ button:hover {
   color: rgb(0, 53, 88);
   border: 1px solid rgb(0, 53, 88);
 }
+
+.box {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.box-com {
+  width: 30%;
+  text-align: start;
+  padding: 15px;
+  background-color: rgba(199, 199, 199, 0.274);
+  border-radius: 22px;
+  line-height: 30px;
+}
+
+.box-com p {
+  text-align: start;
+  font-size: 18px;
+  color: rgba(32, 35, 36, 0.726);
+}

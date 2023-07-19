@@ -38,8 +38,8 @@ const todosSlice = createSlice({
     addTodo: (state, action) => {
       state.push(action.payload)
     },
-    clear: (state) => {
-      state.splice(0, state.length)
+    clear: () => {
+      return []
 
     }
   }
