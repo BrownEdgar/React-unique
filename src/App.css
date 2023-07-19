@@ -41,12 +41,21 @@ select {
   background-color: #fff;
   color: #333;
   cursor: pointer;
-  caret-color: rgba(166, 9, 9, 0.986);
+  /* caret-color: rgba(166, 9, 9, 0.986); */
 }
+
+select option:checked {
+  background-color: rgba(166, 9, 9, 0.986);
+  color: wheat; 
+}
+
+
+
 
 select option {
   background-color:wheat;
 }
+
 
 select::-webkit-scrollbar {
   width: 8px;
