@@ -1,13 +1,17 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { addTodo, clear } from './features/todos/todosSlice'
-
-import "./App.css"
 import { useEffect } from 'react'
 import axios from 'axios'
+import { addTodo, clear } from './features/todos/todosSlice'
 import { addComments } from './features/comments/commentsSlice'
+
+import "./App.css"
+
+
+
 export default function App() {
 	const todos = useSelector(state => state.todos)
 	const comments = useSelector(state => state.comments)
+	
 	const dispatch = useDispatch()
 	const handleClick = () => {
 		const todo = {
