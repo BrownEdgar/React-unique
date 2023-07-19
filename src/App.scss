@@ -1,0 +1,55 @@
+body{
+    background-color: rgb(153, 171, 241);
+}
+.head{
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 20px;
+    padding: 1rem;
+    border-radius: 20px;
+}
+.block{
+    flex-basis:20%;
+    flex-grow: 1;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px black;
+    background: linear-gradient(199deg,rgb(134, 224, 249) 49%,rgb(182, 195, 242) 50%);
+   span{
+    color:red;
+    text-shadow: 1px 1px 1px black;
+    font-weight: 900;
+   }
+   .postid{
+    color:white;
+    font-weight: 900;
+    font-size: 22px;
+    padding: 0 2px;
+    margin-bottom: 15px;
+    background-color: rgb(122, 148, 241);
+    text-align: center;
+    border-radius: 10px;
+    width: 40px;
+    box-shadow: 1px 1px 10px black;
+    text-shadow: 1px 1px 1px black;
+   }
+   .name{
+    color: rgb(63, 61, 61);
+    font-size: 18px;
+    padding: 5px 0;
+   }
+   .mail{
+    color: blue;
+    font-size: 18px;
+    padding: 5px 0;
+   }
+   .body{
+    color:rgb(63, 61, 61);
+    font-size:18px;
+    padding: 5px 0;
+   }
+} 

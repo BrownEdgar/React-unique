@@ -2,7 +2,7 @@ import { createSlice,createSelector } from "@reduxjs/toolkit";
 
 const initialStateValue = {
     data: [],
-    filter:"allComplitide"
+    filter:"allCompleted"
 }
 const commentsSlice = createSlice({
     name:"comments",
@@ -11,7 +11,8 @@ const commentsSlice = createSlice({
      addComments:(_,action) =>{
         return {
             data: action.payload,
-            filter:"allComplitide"
+            initialState:initialStateValue,
+            filter:"allCompleted"
         }
      }
     }
@@ -20,22 +21,21 @@ const commentsSlice = createSlice({
  const getAllComplitedCommentsSelector = state => {
     return state.comments.data.filter(comment => comment.completed)
 }
-const getParrentFilterSelector = state => state.comments.filter
+const getCarrentFilterSelector = state => state.comments.filter
  const getAllunComplitedCommentsSelector = state => {
     return state.comments.data.filter(comment => !comment.completed)
 }
  export const getComments = createSelector(
-    [
-        allCommentsSelector ,
-        getAllComplitedCommentsSelector,
-        getAllunComplitedCommentsSelector,
-        getParrentFilterSelector,
-    ],
-    (allcomments,cmpcomments,unCmpcomments,filterName) => {
+    
+        allCommentsSelector,
+        
+        getCarrentFilterSelector,
+    
+    (allcomments,filterName) => {
       switch(filterName){
         case 'all':return allcomments
-        case 'allComplitide': return cmpcomments
-        case 'unComplitide': return unCmpcomments
+        case 'allComplitide': return allcomments.filter(comment =>comment.completed)
+        case 'unComplitide': return   allcomments.filter(comment => comment.completed) 
         default:return allcomments
       }
     }
