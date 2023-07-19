@@ -1,0 +1,1 @@
+export {default as commentReducer} from './todos/todosSlice'
