@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchTodos, selectAllTodos } from '../feauchers/todos/todosSlise1';
+import { fetchTodos, selectAllTodos } from '../feauchers/todos/todosSlice1';
 
 const Todos = () => {
   const dispatch = useDispatch();
