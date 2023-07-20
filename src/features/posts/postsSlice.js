@@ -12,7 +12,7 @@ export const getPromisePosts = createAsyncThunk('posts/getPostsPromise', async (
 }) 
 
 const postsSlice = createSlice ({
-name:'albums',
+name:'posts',
 initialState,
 reducers:{},
 extraReducers:(builder) => {
@@ -29,7 +29,8 @@ extraReducers:(builder) => {
     .addCase(getPromisePosts.rejected,(state,action) => {
       return{
           data:[],
-          status:'error - 404 sorry'
+          status:'fail',
+          error: action.error.message
       }
     })
   }

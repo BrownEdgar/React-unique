@@ -11,7 +11,7 @@ export default configureStore({
     counter:counterReducer,
     todos:todosReduser,
     comments:commentsReduser,
-    albums:albumsReduser,
     posts:postsReduser,
+    albums:albumsReduser,
   },
 })

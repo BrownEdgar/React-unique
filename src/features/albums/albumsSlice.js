@@ -1,7 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-
 const initialState = {
     data:[],
     status:'idle',
@@ -30,7 +29,8 @@ extraReducers:(builder) => {
   .addCase(getPromiseAlbums.rejected,(state,action) => {
     return{
         data:[],
-        status:'error - 404 sorry'
+        status:'fail',
+        error:action.error.message
     }
   })
 }

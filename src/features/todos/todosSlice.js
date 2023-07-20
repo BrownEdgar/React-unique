@@ -1,46 +1,41 @@
-import { createSlice,createSelector } from "@reduxjs/toolkit";
+import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 
 const initialState = {
-    data: [],
-    filter:"allComplitide"
+    data:[],
+    status:'idle',
 }
-const todosSlice = createSlice({
-    name:"todos",
-    initialState:initialState,
-    reducers:{
-     addTodos:(_,action) =>{
-        return {
-            data: action.payload,
-            filter:"allComplitide"
-        }
-     }
-    }
-})
- const alltodosSelector = state => state.todos.data;
- const getAllComplitedTodosSelector = state => {
-    return state.todos.data.filter(todo => todo.completed)
-}
-const getParrentFilterSelector = state => state.todos.filter
- const getAllunComplitedTodosSelector = state => {
-    return state.todos.data.filter(todo => !todo.completed)
-}
- export const getTodos = createSelector(
-    [
-        alltodosSelector ,
-        getAllComplitedTodosSelector,
-        getAllunComplitedTodosSelector,
-        getParrentFilterSelector,
-    ],
-    (allTodos,cmpTodos,unCmpTodos,filterName) => {
-      switch(filterName){
-        case 'all':return allTodos
-        case 'allComplitide': return cmpTodos
-        case 'unComplitide': return unCmpTodos
-        default:return allTodos
+
+export const getPromiseTodos = createAsyncThunk('todos/getTodosPromise', async () => {
+    const response = await axios.get('https://jsonplaceholder.typicode.com/todos')
+    return response.data
+}) 
+
+const todosSlice = createSlice ({
+name:'todos',
+initialState,
+reducers:{},
+extraReducers:(builder) => {
+    builder
+    .addCase(getPromiseTodos.pending,(state) => {
+      state.status = 'panding'
+    })
+    .addCase(getPromiseTodos.fulfilled,(state,{payload}) => {
+      return{
+          data:payload,
+          status:'success'
       }
-    }
-)
+    })
+    .addCase(getPromiseTodos.rejected,(state,action) => {
+      return{
+          data:[],
+          status:'fail',
+          error: action.error.message
+      }
+    })
+  }
+})
 
-
+export const getTodos = (state) => state.todos
 export default todosSlice.reducer
-export const{addTodos} = todosSlice.actions
+
