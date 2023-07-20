@@ -38,7 +38,7 @@ const getCarrentFilterSelector = state => state.comments.filter
       switch(filterName){
         case 'all':return allcomments
         case 'allCompleted': return allcomments.filter(comment =>comment.completed)
-        case 'unCompleted': return   allcomments.filter(comment => comment.completed) 
+        case 'unCompleted': return   allcomments.filter(comment => !comment.completed) 
         default:return allcomments
       }
     }

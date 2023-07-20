@@ -1,9 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
-import usersReducer from "../features/users/usersSlice";
-import counterReducer from "../features/counter/counterSlice";
-import todosReduser from "../features/todos/todosSlice";
-import commentsReduser from "../features/comments/commentsSlice";
-
+import {usersReducer,counterReducer,todosReduser,
+commentsReduser,postsReduser,albumsReduser
+} from '../features'
 
 
 
@@ -13,5 +11,7 @@ export default configureStore({
     counter:counterReducer,
     todos:todosReduser,
     comments:commentsReduser,
+    albums:albumsReduser,
+    posts:postsReduser,
   },
 })
