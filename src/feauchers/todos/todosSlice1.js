@@ -18,3 +18,4 @@ const todosSlice = createSlice({
 });
 
 export default todosSlice.reducer;
+export const selectAllTodos = state => state.todos;

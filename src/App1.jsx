@@ -1,8 +1,8 @@
 import React from 'react';
-import Users from './feauchers/user/usersSlice1';
-import Posts from './feauchers/posts/postsSlice';
-import Todos from './feauchers/todos/todosSlice1';
-import Albums from './feauchers/albums/albumsSlice';
+import Users from './components/Users';
+import Posts from './components/Posts';
+import Todos from './components/Todos';
+import Albums from './components/Albums';
 import './App.css';
 
 export default function App() {

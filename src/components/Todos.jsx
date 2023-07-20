@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchTodos, selectAllTodos } from '../feauchers/todos/todosSlice1';
-
 const Todos = () => {
   const dispatch = useDispatch();
   const todos = useSelector(selectAllTodos);
@@ -9,6 +8,8 @@ const Todos = () => {
   useEffect(() => {
     dispatch(fetchTodos());
   }, [dispatch]);
+
+  console.log('todos:', todos);
 
   return (
     <div>
@@ -22,5 +23,4 @@ const Todos = () => {
     </div>
   );
 };
-
 export default Todos;

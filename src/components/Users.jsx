@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchUsers } from '../feauchers/user/usersSlice1';
-
 export default function Users() {
   const users = useSelector((state) => state.users);
   const dispatch = useDispatch();
@@ -9,6 +8,8 @@ export default function Users() {
   useEffect(() => {
     dispatch(fetchUsers());
   }, [dispatch]);
+
+  console.log('users:', users);
 
   return (
     <div>

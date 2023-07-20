@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchAlbums, selectAllAlbums } from '../features/albums/albumsSlice';
+import { fetchAlbums } from '../feauchers/albums/albumsSlice'; 
 
 const Albums = () => {
   const dispatch = useDispatch();
-  const albums = useSelector(selectAllAlbums);
+  const albums = useSelector(state => state.albums); 
 
   useEffect(() => {
     dispatch(fetchAlbums());
@@ -16,6 +16,7 @@ const Albums = () => {
       {albums.map(album => (
         <div key={album.id}>
           <h3>{album.title}</h3>
+         
         </div>
       ))}
     </div>

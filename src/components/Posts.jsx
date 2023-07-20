@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchPosts, selectAllPosts } from '../feauchers/posts/postsSlice';
-
 const Posts = () => {
   const dispatch = useDispatch();
   const posts = useSelector(selectAllPosts);
@@ -9,6 +8,8 @@ const Posts = () => {
   useEffect(() => {
     dispatch(fetchPosts());
   }, [dispatch]);
+
+  console.log('posts:', posts);
 
   return (
     <div>
@@ -22,5 +23,4 @@ const Posts = () => {
     </div>
   );
 };
-
 export default Posts;
