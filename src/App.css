@@ -49,10 +49,6 @@ select option:checked {
   color: wheat; 
 }
 
-select selected {
-  background-color: red;
-}
-
 select option {
   background-color:wheat;
 }
