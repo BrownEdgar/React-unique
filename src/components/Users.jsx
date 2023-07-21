@@ -1,6 +1,11 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchUsers } from '../feauchers/user/usersSlice1';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
+
 export default function Users() {
   const users = useSelector((state) => state.users);
   const dispatch = useDispatch();
@@ -10,10 +15,19 @@ export default function Users() {
   }, [dispatch]);
 
   console.log('users:', users);
-
+  const sliderSettings = {
+    dots: false, 
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1, 
+    slidesToScroll: 1,
+    centerMode: true,
+    centerPadding: '5', 
+  };
   return (
     <div className='users'>
       <h1>Users</h1>
+      <Slider {...sliderSettings}>
       {users.map((user) => (
         <div key={user.id} >
           <h1>{user.id}</h1>
@@ -28,6 +42,7 @@ export default function Users() {
           <p><strong>Geo: </strong>{user.address.geo.lat}, {user.address.geo.lng}</p>
         </div>
       ))}
+      </Slider>
     </div>
   );
 }

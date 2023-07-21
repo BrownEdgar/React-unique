@@ -88,3 +88,24 @@
 .albums>h1 {
   background-color: #f07d7d;
 }
+
+
+.slick-slider {
+  width: 98%;
+  margin: 0 auto;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: 0 10px; 
+}
+
+
+.slick-dots li button:before {
+  font-size: 12px;
+  color: #888;
+}
+.slick-dots li.slick-active button:before {
+  color: #555;
+}
