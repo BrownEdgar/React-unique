@@ -9,6 +9,7 @@ import './App.css';
 export default function App() {
   const sliderSettings = {
     dots: true,
+    arrows:false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
