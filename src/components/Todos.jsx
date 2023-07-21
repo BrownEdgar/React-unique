@@ -12,11 +12,13 @@ const Todos = () => {
   console.log('todos:', todos);
 
   return (
-    <div>
-      <h2>Todos</h2>
+    <div className='todos'>
+      <h1>Todos</h1>
       {todos.map(todo => (
         <div key={todo.id}>
-          <h3>{todo.title}</h3>
+          <h2>{todo.id}</h2>
+          <h3><strong>User ID: </strong>{todo.userId}</h3>
+          <p><strong>Title: </strong>{todo.title}</p>
           <p>{todo.completed ? 'Completed' : 'Incomplete'}</p>
         </div>
       ))}

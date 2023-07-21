@@ -1,67 +1,90 @@
 .container {
-  width: 90%;
-  margin: 20px auto;
   display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.albums,
+.todos,
+.posts,
+.users {
+  display: flex;
   flex-wrap: wrap;
-}
-
-.container > div {
-  flex-basis: 40%;
-  padding: 20px;
-  border-radius: 8px;
-  background-color: wheat;
-  box-shadow: 4px 8px 8px rgba(166, 9, 9, 0.986);
-  margin-top: 60px;
+  width: 95%;
+  margin: 0 auto;
   margin-bottom: 20px;
-  height: 250px;
+  gap: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  
 }
 
-.container > div > h1 {
-  margin-bottom: 10px;
-  color: red;
-}
-.container > div > h2 {
-  margin-bottom: 10px;
-}
-.container > div > p {
-  margin-bottom: 10px;
-}
-
-select {
-  margin-bottom: 20px;
-  padding: 0 20px;
-  position: absolute;
-  font-size: 16px;
-  height: 40px;
-  border-radius: 4px;
-  box-shadow: 4px 8px 8px rgba(166, 9, 9, 0.986);
-  border: 1px solid wheat;
-  background-color: #fff;
-  color: #333;
-  cursor: pointer;
-  /* caret-color: rgba(166, 9, 9, 0.986); */
+.albums > div,
+.todos > div,
+.posts > div,
+.users > div {
+  flex-basis: calc(25% - 20px); 
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
 }
 
-select option:checked {
-  background-color: rgba(166, 9, 9, 0.986);
-  color: wheat; 
+.albums > h1,
+.todos >h1,
+.posts > h1,
+.users > h1 {
+  flex-basis: 100%; 
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
 }
 
-select option {
-  background-color:wheat;
+.albums {
+  background-image: radial-gradient(circle at 30% 30%, #f07d7d, #840909);
 }
 
-select::-webkit-scrollbar {
-  width: 8px;
+.todos {
+  background-image: radial-gradient(circle at 70% 70%, #7ec9f2, #072f6f);
 }
 
-select::-webkit-scrollbar-track {
-  background-color:wheat;
- }
-
-select::-webkit-scrollbar-thumb {
-  background-color: rgba(166, 9, 9, 0.986);
+.posts {
+  background-image: radial-gradient(circle at 70% 30%, #f0e5ae, #bd8f10);
 }
 
+.users {
+  background-image: radial-gradient(circle at 30% 70%, #88eece, #1c6a4c);
+}
+.users>div {
+  background-color: #88eece;
+}
+
+.posts>div {
+  background-color: #bd8f10;
+}
+
+.todos>div {
+  background-color: rgb(82, 89, 231);
+}
+
+.albums>div {
+  background-color: #f07d7d;
+}
+
+.users>h1 {
+  background-color: #88eece;
+}
+
+.posts>h1 {
+  background-color: #bd8f10;
+}
+
+.todos>h1 {
+  background-color: rgb(82, 89, 231);
+}
+
+.albums>h1 {
+  background-color: #f07d7d;
+}

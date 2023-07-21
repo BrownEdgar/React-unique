@@ -11,11 +11,13 @@ const Albums = () => {
   }, [dispatch]);
 
   return (
-    <div>
-      <h2>Albums</h2>
+    <div className='albums'>
+      <h1>Albums</h1>
       {albums.map(album => (
         <div key={album.id}>
-          <h3>{album.title}</h3>
+          <h2>{album.id}</h2>
+          <h2><strong>User ID: </strong>{album.userId}</h2>
+          <h3><strong>Title: </strong>{album.title}</h3>
          
         </div>
       ))}

@@ -12,12 +12,14 @@ const Posts = () => {
   console.log('posts:', posts);
 
   return (
-    <div>
-      <h2>Posts</h2>
+    <div className='posts'>
+      <h1>Posts</h1>
       {posts.map(post => (
         <div key={post.id}>
-          <h3>{post.title}</h3>
-          <p>{post.body}</p>
+          <h2>{post.id}</h2>
+          <h2><strong>UserID: </strong>{post.userId}</h2>
+          <p><strong>Title: </strong>{post.title}</p>
+          <p><strong>Body: </strong>{post.body}</p>
         </div>
       ))}
     </div>
