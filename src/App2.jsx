@@ -1,12 +1,16 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import {allSelector} from './feauchers/test/testSlise'
+import MyForm from './components/MyForm'
+import './App2.css';
 
 const App2 = () => {
   const films = useSelector(allSelector);
 
   return (
-    <div>
+    <>
+<MyForm />
+<div className='films'>
       {
         films.map(film => {
           return (
@@ -28,6 +32,8 @@ const App2 = () => {
         })
       }
     </div>
+    </>
+    
   );
 };
 

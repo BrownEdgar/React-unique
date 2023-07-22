@@ -1,0 +1,74 @@
+.films {
+    width: 70rem;
+    margin: 50px auto;
+    padding: 16px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.films > .film {
+    flex-basis:30%;
+    border-radius: 10px;
+    background-color: #1d1d1d;
+    border: 1px solid orangered;
+    padding: 16px 26 px;
+    height: 220px;
+    min-width: 300px;
+}
+
+.film h2 {
+    margin: 12px;
+    letter-spacing: 2px;
+    color: white;
+}
+
+.film ul {
+    margin: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.film ul li {
+    font-size: 18px;
+    color: white;
+}
+
+li + li {
+    margin-left: 10px;
+    padding-left: 6px;
+}
+.film ul li span {
+    color: orangered;
+    margin-right: 8px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 2px;
+    font-weight: 300;
+}
+
+form {
+    width: 540px;
+    padding: 1rem;
+    
+}
+form>input:nth-child(1),
+form>input:last-child {
+    width: 96%;
+}
+input {
+    width: 47%;
+    margin: 10px 4px;
+    padding: 1rem;
+    border: 1px solid orangered;
+    font-size: 18px;
+    background-color: rgba(0, 0, 0, 30%);
+    border-radius: 12px;
+    color: #fff;
+}
+
+::placeholder {
+    color: rgba(245, 245, 220, 0.595);
+    font-size: 12px;
+}
