@@ -27,5 +27,5 @@ export default configureStore({
     test: testReducer,
     players: playersReducer
   },
-  middleware: [addIdMiddleWare, checkNameMiddleWare,dateMiddleWare]
+  middleware: [addIdMiddleWare, checkNameMiddleWare]
 })
