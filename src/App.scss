@@ -1,78 +1,90 @@
 body{
-    background-color: rgb(153, 171, 241);
-}
+    background-image: url(../public/abst2.jpg);
+    width:100%;
+    height:100%;
+    background-size:cover;
+}   
 .head{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     gap: 20px;
-    .selection{
-        width: 100%;
-        height: 30px;
-        display: flex;
-        justify-content:start;
-        gap: 10px;
-        padding: 0 50px;
-        button{
-        color:whitesmoke;
-        font-size:14px;
-        text-shadow: 1px 1px 1px black;
-        font-weight: 700;
-        padding: 5px 40px;
-        border-radius: 10px;
-        box-shadow: 2px 2px 10px black;
-        background-color: rgb(91, 187, 252);
-        transition: .1s;
-        }
-        button:hover{
-         background-color: rgb(16, 219, 16);   
-        }
-    }
+    padding: 20px;
     div{
-        width:400px;
-        height:250px;
-        margin-top:20px;
+        width:410px;
+        height:360px;
+        margin-top:25px;
     }
 }
 .block{
-    width:40%;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 1px 1px 10px black;
-    background: linear-gradient(199deg,rgb(134, 224, 249) 49%,rgb(182, 195, 242) 50%);
-    transform: scale(0.96);
+    border-radius:60px 0 60px 0 ;
+    box-shadow: 2px 2px 10px black;
+    background:rgba(0, 0, 0, 0.564);
+    border-top:4px solid blue;
+    border-right: 4px solid blue;
+    border-left:4px solid red ;
+    border-bottom: 4px solid red;
+
    span{
     color:red;
     text-shadow: 1px 1px 1px black;
-    font-weight: 900;
    }
-   .postid{
-    color:white;
-    font-weight: 900;
-    font-size: 22px;
-    padding: 0 2px;
-    margin-bottom: 15px;
-    background-color: rgb(122, 148, 241);
+   .auto{
+    color:rgb(168, 166, 166);
+    box-shadow: 1px 1px 10px rgba(0, 0, 255, 0.573);
+    font-weight: 800;
+    font-size: 25px;
     text-align: center;
-    border-radius: 10px;
-    width: 40px;
-    box-shadow: 1px 1px 10px black;
-    text-shadow: 1px 1px 1px black;
+    text-shadow: 1px 1px 1px white;
+    border-radius: 20px;
+    letter-spacing: 2px;
    }
-   .name{
-    color: rgb(63, 61, 61);
+   .model{
+    color:rgba(245, 245, 245, 0.838);
     font-size: 18px;
-    padding: 5px 0;
+    padding: 5px;
+    font-size: 20px;
    }
-   .mail{
-    color: blue;
+   .year{
+    font-size: 20px;
+    padding: 5px;
+    color:rgba(245, 245, 245, 0.838);
+   }
+   .addres{
+    font-size: 20px;
+    padding: 5px;
+    color:rgba(245, 245, 245, 0.838);
+   }
+   .email{
+    color:rgba(245, 245, 245, 0.838);
     font-size: 18px;
-    padding: 5px 0;
+    padding: 5px;
+    font-size: 20px;
    }
-   .body{
-    color:rgb(63, 61, 61);
-    font-size:18px;
-    padding: 5px 0;
+   .phone{
+    font-size: 20px;
+    padding: 5px;
+    color:rgba(245, 245, 245, 0.838);
+   }
+   .image{
+    display: flex;
+    height:50px;
+    justify-content:end;
+    transform: translate(15px,-55px);
+    img{
+        height:auto;
+        background-size: cover;
+        background-color: rgb(240, 248, 255);
+        padding: 5px;
+        box-shadow: 2px 2px 10px black;
+        border-radius:20px 0 20px 0;
+        border-left: 4px solid red;
+        border-top:4px solid blue;
+        border-right: 4px solid red;
+        border-bottom: 4px solid blue;
+        transition: .4s;
+        z-index: 9;
+    }
    }
 } 

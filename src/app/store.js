@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import {usersReducer,counterReducer,todosReduser,
-commentsReduser,postsReduser,albumsReduser,testReduser
+commentsReduser,postsReduser,albumsReduser, carsReduser,
 } from '../features'
 
 
@@ -13,6 +13,6 @@ export default configureStore({
     comments:commentsReduser,
     posts:postsReduser,
     albums:albumsReduser,
-    test:testReduser,
+    cars:carsReduser,
   },
 })
