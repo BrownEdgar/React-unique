@@ -1,75 +1,74 @@
-.container {
-  text-align: center;
+body {
+  background-color: rgb(223, 226, 226);
+}
+form {
+  width: 420px;
+  padding: 1rem;
+  margin: 30px auto;
 }
 
-.app {
+form>input:nth-child(1),
+form>input:nth-child(2),
+form>input:nth-child(3) {
+  width: 96%;
+}
+
+form>input:nth-last-child(1) {
+  width: 96%;
+}
+
+input {
+  width: 47%;
+  margin: 10px 4px;
+  padding: 1rem 0.6rem;
+  border: 0;
+  border-bottom: 3px solid rgb(224, 100, 18);
+  font-size: 18px;
+  background-color: rgba(0, 0, 0, 0.719);
+  color: white;
+}
+
+::placeholder {
+  color: beige;
+  font-size: 12px;
+}
+
+.players {
+
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+  justify-content: space-around;
   gap: 20px;
-  width: 90%;
-  margin: 20px auto;
+  flex-wrap: wrap;
 }
 
 .card {
-  width: 22%;
-  background-color: antiquewhite;
-  padding: 10px;
-  border-radius: 20px;
-  box-shadow: 0 0 5px 0 black;
-}
-
-h2 {
-  font-size: 20px;
-}
-
-p {
-  text-align: end;
-  font-size: 25px;
-  font-weight: 900;
-  color: rgba(4, 49, 78, 0.411);
-}
-
-button {
-  background-color: rgb(0, 53, 88);
-  padding: 8px 16px;
-  border: 1px solid transparent;
-  border-radius: 15px;
-  color: whitesmoke;
-  letter-spacing: 1px;
-  transition: 0.3s;
-  font-weight: 700;
-  margin: 0 10px;
-}
-
-button:hover {
-  background-color: whitesmoke;
-  color: rgb(0, 53, 88);
-  border: 1px solid rgb(0, 53, 88);
-}
-
-.box {
-  width: 90%;
-  margin: 0 auto;
   display: flex;
-  flex-wrap: wrap;
-  margin-top: 50px;
+  width: 320px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 2px 2px black;
+}
+
+.card .text {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  color: black;
+}
+
+.card p {
+  display: flex;
   justify-content: space-between;
-  gap: 20px;
-}
-
-.box-com {
-  width: 30%;
-  text-align: start;
-  padding: 15px;
-  background-color: rgba(199, 199, 199, 0.274);
-  border-radius: 22px;
-  line-height: 30px;
-}
-
-.box-com p {
-  text-align: start;
+  align-items: center;
   font-size: 18px;
-  color: rgba(32, 35, 36, 0.726);
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.card p span {
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 25px;
+  letter-spacing: 1px;
 }
