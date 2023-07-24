@@ -109,6 +109,12 @@ export const allCars = state => state.cars
 const carsSlice = createSlice ({
   name:'cars',
   initialState,
-  reducers:{},
+  reducers:{
+    addCars:(state,{payload}) => {
+       state.push(payload) 
+    }
+  },
 })
+
+export const {addCars} = carsSlice.actions
 export default carsSlice.reducer

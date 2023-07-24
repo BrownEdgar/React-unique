@@ -1,26 +1,18 @@
 import { useDispatch, useSelector } from 'react-redux'
-// import { useEffect } from 'react'
-// import { getAlbums, getPromiseAlbums } from './features/albums/albumsSlice';
-// import { getPosts, getPromisePosts } from './features/posts/postsSlice';
-// import { getPromiseTodos, getTodos } from './features/todos/todosSlice';
-// import { getPromiseUsers, getUsers } from './features/users/usersSlice';
 import './App.scss'
 import { allCars } from './features/cars/carsSlice';
+import MyComponent from './components/MyComponent';
 
 
 
 
 export default function App() {
-  
-//   const albums = useSelector(getAlbums)
-//   const posts = useSelector(getPosts)
-//   const todos = useSelector(getTodos)
-//   const users = useSelector(getUsers)
-     const cars = useSelector(allCars)
-//   const dispatch = useDispatch()
+    
+  const cars = useSelector(allCars)
     
   return (
    <div className='head'>
+    <MyComponent/>
     {
         cars.map(elem => {
            return(
@@ -32,6 +24,7 @@ export default function App() {
                     <li className='auto'>
                         {elem.auto}
                     </li>
+                    <li className='Id'><span>Id </span>{elem.id}</li>
                     <li className='model'>
                         <span>MODEL </span>
                         {elem.model}
