@@ -1,8 +1,20 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import {usersReducer,counterReducer,todosReduser,
-commentsReduser,postsReduser,albumsReduser, carsReduser,
+commentsReduser,postsReduser,albumsReduser, carsReduser,productsReducer
 } from '../features'
 
+import {
+  persistStore,
+  persistReducer,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
+import productsSlice from "../features/products/productsSlice";
 
 const addIdMiddle = (store) => (next) => (action) => {
   if(action.type === 'cars/addCars'){
@@ -27,15 +39,57 @@ const checkNumberPhoneMiddleWaer = (store) => (next) => (action) => {
   }
 }
 
-export default configureStore({
-  reducer: {
-    users:usersReducer,
-    counter:counterReducer,
-    todos:todosReduser,
-    comments:commentsReduser,
-    posts:postsReduser,
-    albums:albumsReduser,
-    cars:carsReduser,
-  },
-  middleware:[addIdMiddle,checkNumberPhoneMiddleWaer]
+
+const persistConfig = {
+  key: 'root',
+  version: 1,
+  storage,
+  whitelist:['cars']
+ }
+
+ 
+ const rootReducer = combineReducers({
+  users:usersReducer,
+  counter:counterReducer,
+  todos:todosReduser,
+  comments:commentsReduser,
+  posts:postsReduser,
+  albums:albumsReduser,
+  cars:carsReduser,
+  products:productsReducer
 })
+const persistedReducer = persistReducer(persistConfig, rootReducer)
+
+
+ export const store = configureStore({
+  reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) => 
+  getDefaultMiddleware({
+    serializableCheck: {
+      ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER,addIdMiddle,checkNumberPhoneMiddleWaer],
+    },
+  }),
+})
+
+export default persistStore(store)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

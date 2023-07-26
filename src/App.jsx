@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import './App.scss'
 import { allCars } from './features/cars/carsSlice';
 import MyComponent from './components/MyComponent';
+import Products from './components/products';
 
 
 
@@ -13,6 +14,7 @@ export default function App() {
   return (
    <div className='head'>
     <MyComponent/>
+    {/* <Products/> */}
     {
         cars.map(elem => {
            return(
