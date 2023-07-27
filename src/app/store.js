@@ -1,5 +1,29 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import testReducer from '../feauchers/test/testSlise';
+
+import {
+  persistStore,
+  persistReducer,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
+
+
+const rootReduser = combineReducers({
+  test: testReducer,
+})
+const persistConfig = {
+  key: 'root',
+  version: 1,
+  storage,
+}
+const persistedReducer = persistReducer(persistConfig, rootReduser)
+
 
 const addIdMiddleware = (store) => (next) => (action) => {
   if (action.type === 'test/addFilm') {
@@ -48,15 +72,14 @@ const checkFilmExistenceMiddleware = (store) => (next) => (action) => {
 };
 
 
-
-export default configureStore({
-  reducer: {
-    test: testReducer,
-  },
-  middleware: [
-    addIdMiddleware,
-    checkYearMiddleware,
-    checkRatingMiddleware,
-    checkFilmExistenceMiddleware,
-  ],
+export const store = configureStore({
+  reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }), 
 });
+
+export default persistStore(store);

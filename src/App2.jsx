@@ -9,7 +9,7 @@ const App2 = () => {
 
   return (
     <>
-<MyForm />
+    <MyForm />
 <div className='films'>
       {
         films.map(film => {
