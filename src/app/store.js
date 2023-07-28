@@ -79,7 +79,12 @@ export const store = configureStore({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }), 
+    }).concat([ 
+    addIdMiddleware,
+    checkYearMiddleware,
+    checkRatingMiddleware,
+    checkFilmExistenceMiddleware,
+  ]),
 });
 
 export default persistStore(store);
